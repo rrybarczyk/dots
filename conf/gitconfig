@@ -1,0 +1,39 @@
+[user]
+    email = rj@rybar.tech
+    signingkey = 829D6652A6AAB3C09E9F82BE56E3AEB6CCEF97E8
+
+[gpg]
+    program = /usr/bin/gpg
+
+[commit]
+    gpgsign = true
+
+[core]
+    editor = vim
+
+[alias]
+    ci = commit
+
+[color]
+    ui = always
+    diff = always
+    status = always
+    grep = always
+    showbranch = always
+
+[color "status"]
+    added = yellow blue
+    changed = magenta blink
+    untracked = cyan bold
+
+[color "branch"]
+    remote  = green white
+    upstream = yellow white
+    local = blue white
+
+[color "grep"]
+    context = blue ul
+    lineNumber = magenta blink
+
+[color "push"]
+    error = red blink

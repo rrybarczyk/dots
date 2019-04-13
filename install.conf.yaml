@@ -1,0 +1,20 @@
+- defaults:
+    link:
+        relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.dots: ''
+    ~/.bash_logout: conf/bash_logout
+    ~/.bash_profile: conf/bash_profile
+    ~/.bashrc: conf/bashrc
+    ~/.gitconfig: conf/gitconfig
+    ~/.profile: conf/profile
+    ~/.tmux.conf: conf/tmux.conf
+    ~/.vim: conf/vim
+    ~/.vimrc: conf/vim/vimrc
+    ~/.xinitrc: conf/xinitrc
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
