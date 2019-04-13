@@ -1,9 +1,7 @@
 [user]
     email = rj@rybar.tech
-    signingkey = 829D6652A6AAB3C09E9F82BE56E3AEB6CCEF97E8
-
-[gpg]
-    program = /usr/bin/gpg
+    name = RJ Rybarczyk
+    signingkey = 56E3AEB6CCEF97E8
 
 [commit]
     gpgsign = true
@@ -23,7 +21,7 @@
 
 [color "status"]
     added = yellow blue
-    changed = magenta blink
+    changed = magenta
     untracked = cyan bold
 
 [color "branch"]
@@ -33,7 +31,7 @@
 
 [color "grep"]
     context = blue ul
-    lineNumber = magenta blink
+    lineNumber = magenta
 
 [color "push"]
     error = red blink
