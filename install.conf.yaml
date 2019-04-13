@@ -6,15 +6,15 @@
 
 - link:
     ~/.dots: ''
-    ~/.bash_logout: conf/bash_logout
-    ~/.bash_profile: conf/bash_profile
-    ~/.bashrc: conf/bashrc
-    ~/.gitconfig: conf/gitconfig
-    ~/.profile: conf/profile
-    ~/.tmux.conf: conf/tmux.conf
-    ~/.vim: conf/vim
-    ~/.vimrc: conf/vim/vimrc
-    ~/.xinitrc: conf/xinitrc
+    ~/.bash_logout: config/bash_logout
+    ~/.bash_profile: config/bash_profile
+    ~/.bashrc: config/bashrc
+    ~/.gitconfig: config/gitconfig
+    ~/.profile: config/profile
+    ~/.tmux.conf: config/tmux.conf
+    ~/.vim: config/vim
+    ~/.vimrc: config/vim/vimrc
+    ~/.xinitrc: config/xinitrc
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

@@ -10,7 +10,7 @@ sudo pacman -Syu --noconfirm
 sudo pacman -S --noconfirm --needed vim tmux git bash dhcpcd networkmanager netctl less tree make gnu-netcat ngrep openssl make gcc cmake ufw
 
 # Enviornment
-sudo pacman -S --noconfirm --needed dmenu i3status i3-gaps intelucode slock terminus-font xclip wget xorg-server unzip
+sudo pacman -S --noconfirm --needed dmenu i3status i3-gaps intelucode slock terminus-font xclip wget xorg-server unzip clang
 
 # To enable audio
 sudo pacman -S --noconfirm --needed alsa-utils
@@ -18,13 +18,13 @@ sudo pacman -S --noconfirm --needed alsa-utils
 # Fun sounds
 sudo pacman -S --noconfirm --needed soundfont-fluid fluidsynth vmpk
 
-# sudo pacman -S --noconfirm --needed nvidia cuda pkg-config clang
+# sudo pacman -S --noconfirm --needed nvidia cuda pkg-config 
 
 # Install rust
 curl https://sh.rustup.rs -sSf | sh
 
 # Install global rust crates
-cargo install just ripgrep fd-find exa xargo strs
+cargo install just ripgrep fd-find exa xargo strs bat
 
 
 
