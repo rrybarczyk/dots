@@ -40,6 +40,8 @@ sudo pacman -S --noconfirm --needed soundfont-fluid fluidsynth vmpk
 # Embedded systems cross compilation
 sudo pacman -S --noconfirm --needed qemu-arch-extra arm-none-eabi-gdb openocd
 
+# Docker 
+sudo pacman -S --noconfirm --needed docker docker-compose
 # Other
 sudo pacman -S --noconfirm --needed nodejs npm
 
