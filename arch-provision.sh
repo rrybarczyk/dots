@@ -38,7 +38,7 @@ sudo pacman -S --noconfirm --needed soundfont-fluid fluidsynth vmpk
 # echo 'export PATH=/opt/cuda/bin:$PATH' >> ~/.bash_profile
 
 # Embedded systems cross compilation
-sudo pacman -S --noconfirm --needed qemu-arch-extra arm-none-eabi-gdb openocd
+sudo pacman -S --noconfirm --needed qemu qemu-arch-extra arm-none-eabi-gdb openocd
 
 # Docker 
 sudo pacman -S --noconfirm --needed docker docker-compose
