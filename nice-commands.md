@@ -1,8 +1,8 @@
-## Put `man` output in file
+# Put `man` output in file
 `$ man <utility> | col -b > <utility>.txt`
 
 
-## Access a USB
+# Access a USB
 [USB Storage Devices](https://wiki.archlinux.org/index.php/USB_storage_devices)
 ```
 $ lsblk -f
@@ -28,4 +28,18 @@ Make a directory to mount the USB in and mount it:
 ```
 $ sudo mkdir /mnt/usbstick
 $ sudo mount /dev/sdb1 /mnt/usbstick/
+```
+
+# Orient External Monitors
+## Change External Monitor Orientation
+Put main monitor (LVDS-1) on the right of the external monitor (VGA-1) connected via the VGA port.
+
+```
+$ xrandr --output LVDS-1 --auto --rotate normal --output VGA-1 --auto --left-of LVDS-1
+```
+
+## Watch Live Monitor Events
+What events from things like connecting and disconnecting external monitor.
+```
+$ udevadm monitor
 ```
