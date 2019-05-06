@@ -18,3 +18,6 @@ export GPG_TTY=$(tty)
 # export PATH="/home/rj/.local/share/cargo/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/usr/local/bin/aarch64-none-elf/bin:$PATH"
+
+export DOTS="$HOME/development/dots"
+export PATH="$HOME/tools/hopper/pkg/hopper/opt/hopper-v4/bin:$PATH"

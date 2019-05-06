@@ -16,3 +16,5 @@ alias pbcopy="xclip -sel clip"
 
 alias cargogen="cargo generate --git https://github.com/rrybarczyk/template-rs.git"
 
+
+alias qc="$HOME/development/quick-calc/target/release/qcal"
