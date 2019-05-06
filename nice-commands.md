@@ -1,6 +1,22 @@
 # Put `man` output in file
 `$ man <utility> | col -b > <utility>.txt`
 
+# Use AUR
+Install:
+
+```
+$ git clone <repo>.git
+$ cd <repo>
+$ git pull
+$ sudo makepkg -si
+
+```
+
+# Change Background Picture
+Use images that are 1920x1080
+```
+$ feh --bg-fill <path-to-picture>
+```
 
 # Access a USB
 [USB Storage Devices](https://wiki.archlinux.org/index.php/USB_storage_devices)
@@ -43,3 +59,6 @@ What events from things like connecting and disconnecting external monitor.
 ```
 $ udevadm monitor
 ```
+
+# Search in vim
+In insert mode, get search with C-x C-f
