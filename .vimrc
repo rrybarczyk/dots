@@ -78,6 +78,7 @@ set hlsearch					    "Highlight search terms
 set incsearch					    "Highlight search terms as you type
 set title						    "Set the terminal title
 set nobackup			            "Do not create backup files
+set colorcolumn=80                  "Put a vertical column at line 80
 
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
