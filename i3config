@@ -30,7 +30,8 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec lxterminal 
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -163,8 +164,18 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+
+for_window [class=".*"] border pixel 0
+gaps inner 10
+
+# on startup
+exec_always --no-startup-id ~/.fehbg
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
         status_command i3status
 }
+
+# super + shift + c -> reloads config (may not always apply new changes)
+# super + shift + r -> restarts i3 (but not x)
