@@ -25,7 +25,7 @@ sudo pacman -Syu --noconfirm
 sudo pacman -S --noconfirm --needed vim tmux git bash dhcpcd networkmanager netctl less tree make gnu-netcat ngrep openssl make gcc cmake ufw  pkg-config 
 
 # Enviornment
-sudo pacman -S --noconfirm --needed dmenu i3status i3-gaps intelucode slock terminus-font xclip wget xorg-server unzip clang
+sudo pacman -S --noconfirm --needed dmenu i3status i3-gaps intelucode slock terminus-font xclip wget xorg-server unzip clang socat feh
 
 # To enable audio
 sudo pacman -S --noconfirm --needed alsa-utils
@@ -42,6 +42,7 @@ sudo pacman -S --noconfirm --needed qemu qemu-arch-extra arm-none-eabi-gdb openo
 
 # Docker 
 sudo pacman -S --noconfirm --needed docker docker-compose
+
 # Other
 sudo pacman -S --noconfirm --needed nodejs npm
 
@@ -51,6 +52,19 @@ source ~/.bash_profile
 
 # Install global rust crates
 cargo install just ripgrep fd-find exa xargo strs bat cargo-watch cargo-binutils quick-calc cargo-generate cargo-xbuild
+
+# Install pip for python2
+mkdir tmppiptools
+cd tmppiptools
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py 
+sudo python2 get-pip.py
+cd ..
+rm -rf tmppiptools
+sudo pip install --upgrade pip
+
+# Install aws cli
+sudo pip install awscli
+sudo pip install awscli --upgrade
 
 #
 # Add useful things to .bashrc
