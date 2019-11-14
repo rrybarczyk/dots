@@ -16,6 +16,8 @@ sudo pacman -S --noconfirm --needed sway swayidle swaylock rofi slurp grim
 # General Enviornment Tools
 sudo pacman -S --noconfirm --needed unzip clang feh firefox okular alacritty lolcat alsa-utils lastpass-cli
 
+sudo pacman -S --noconfirm --needed dbus bluez bluez-utils pulseaudio-bluetooth alsa-plugins pulseaudio pulseaudio-alsa ponymix
+
 # LaTeX Development
 sudo pacman -S --noconfirm --needed texlive-most biber 
 
