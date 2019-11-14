@@ -1,0 +1,35 @@
+- defaults:
+    link:
+        create: true
+        relink: true
+
+- clean:
+        - '~'
+        - ~/.cargo
+        - ~/.config
+        - ~/.ssh
+
+- shell:
+        - mkdir -p ~/.cargo
+        - mkdir -p ~/.config
+        - mkdir -p ~/.config/alacritty
+        - mkdir -p ~/.config/sway
+        - mkdir -p ~/.config/swaylock
+        - mkdir -p ~/.config/swaynag
+        - mkdir -p ~/.gnupg
+        - mkdir -p ~/.local/share/lpass
+        - mkdir -p ~/.ssh
+        - mkdir -p ~/.vim/autoload
+        - mkdir -p ~/aur
+
+- link:
+        ~/app: app
+
+        ~/.config/git/config:           etc/gitconfig
+        ~/.config/sway/config:          etc/sway.config
+        ~/.config/swaynag/config:       etc/swaynag.config
+        ~/.config/swaylock/config:      etc/swaylock.config
+        ~/.tmux.conf:                   etc/tmux.conf
+        ~/.xresources:                  etc/xresources
+        ~/.vimrc:                       etc/vimrc
+        ~/.vim/autoload/plug.vim:       submodules/vim-plug/plug.vim

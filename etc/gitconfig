@@ -1,0 +1,33 @@
+[user]
+    email = rj@rybar.tech
+    name = RJ Rybarczyk
+
+[core]
+    editor = vim
+
+[alias]
+    ci = commit
+
+[color]
+    ui = always
+    diff = always
+    status = always
+    grep = always
+    showbranch = always
+
+[color "status"]
+    added = black magenta 
+    changed = black yellow
+    untracked = cyan bold
+
+[color "branch"]
+    remote  = green white
+    upstream = yellow white
+    local = blue white
+
+[color "grep"]
+    context = blue ul
+    lineNumber = magenta
+
+[color "push"]
+    error = red bold
