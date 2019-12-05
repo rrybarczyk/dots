@@ -49,8 +49,26 @@ Plug 'jason0x43/vim-js-indent'
 " Haskell Syntax
 Plug 'neovimhaskell/haskell-vim'
 
+" Syntax
+Plug 'rafi/awesome-vim-colorschemes'
+
+" R Plugin
+Plug 'vim-scripts/Vim-R-plugin'
+
+" R script settings
+let maplocalleader = ","
+vmap <Space> <Plug>RDSendSelection
+nmap <Space> <Plug>RDSendLine
+let vimrplugin_applescript=0
+let vimrplugin_vsplit=1
+
 call plug#end()
 
+" colorscheme space-vim-dark
+" colorscheme abstract
+colorscheme anderson
+" colorscheme afterglow
+" let g:airline_theme='afterglow'
 "------------------------------------------------------------------
 "---------------------------- My Syntax ----------------------------
 set nu rnu								   "Hybrid relative line number
@@ -174,7 +192,7 @@ call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
 
  "-----------------------------------------------------------------------------
  "---------------------------- Solarized Color Scheme -------------------------
- set background=dark
+ " set background=dark
  let g:solarized_termtrans=1
  let g:solarized_termcolors=256
  let g:solarized_contrast="high"
