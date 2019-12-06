@@ -19,7 +19,7 @@ sudo pacman -S --noconfirm --needed unzip clang feh firefox okular alacritty lol
 sudo pacman -S --noconfirm --needed dbus bluez bluez-utils pulseaudio-bluetooth alsa-plugins pulseaudio pulseaudio-alsa ponymix
 
 # LaTeX Development
-sudo pacman -S --noconfirm --needed texlive-most biber 
+sudo pacman -S --noconfirm --needed texlive-most biber r
 
 # Install Rust
 curl -sSf https://sh.rustup.rs | sh
