@@ -25,14 +25,15 @@
 - link:
         ~/app: app
 
+        ~/.bash_profile:                        etc/bash_profile
+        ~/.bashrc:                              etc/bashrc
         ~/.config/alacritty/alacritty.yml:      etc/alacritty.yml
         ~/.config/git/config:                   etc/gitconfig
         ~/.config/sway/config:                  etc/sway.config
-        ~/.config/swaynag/config:               etc/swaynag.config
         ~/.config/swaylock/config:              etc/swaylock.config
+        ~/.config/swaynag/config:               etc/swaynag.config
         ~/.profile:                             etc/profile
-        ~/.bashrc:                              etc/bashrc
         ~/.tmux.conf:                           etc/tmux.conf
-        ~/.xresources:                          etc/xresources
-        ~/.vimrc:                               etc/vimrc
         ~/.vim/autoload/plug.vim:               submodules/vim-plug/plug.vim
+        ~/.vimrc:                               etc/vimrc
+        ~/.xresources:                          etc/xresources
