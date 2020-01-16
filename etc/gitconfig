@@ -1,9 +1,10 @@
 [user]
-    email = rj@rybar.tech
-    name = RJ Rybarczyk
+	email = rj@rybar.tech
+	name = Rj Rybarczyk
 
 [core]
     editor = vim
+	pager = cat
 
 [alias]
     ci = commit
