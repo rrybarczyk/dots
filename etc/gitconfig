@@ -3,8 +3,8 @@
 	name = Rj Rybarczyk
 
 [core]
-    editor = vim
-	pager = cat
+  editor = vim
+	pager = less -RXF
 
 [alias]
     ci = commit
