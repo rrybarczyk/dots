@@ -32,3 +32,6 @@
 
 [color "push"]
     error = red bold
+  
+[pull]
+  rebase = true
