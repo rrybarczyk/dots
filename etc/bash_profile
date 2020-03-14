@@ -7,3 +7,4 @@
 
 export PATH="$HOME/.cargo/bin:$PATH"
 export DOTS="$HOME/.dots"
+export WDIR="/mnt/c/Users/17074"
