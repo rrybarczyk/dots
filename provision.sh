@@ -17,6 +17,9 @@ sudo apt install -y lolcat
 # Install Rust
 curl -sSf https://sh.rustup.rs | sh | sh -s -- -y
 source $HOME/.cargo/bin
+rustup install nightly
+rustup component add rustfmt
+rustup component add clippy
 
 # Install useful rustup tools and global crates
 rustup install nightly
