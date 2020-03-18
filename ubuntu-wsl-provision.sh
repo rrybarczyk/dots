@@ -23,7 +23,19 @@ rustup install nightly
 rustup component add rustfmt
 rustup component add clippy
 
-cargo install ripgrep fd-find just bat exa qc cargo-watch cargo-check cargo-outdated cargo-edit cargo-flamegraph
+# bat               - a colorful cat
+# exa               - a colorful ls
+# fd-find           - a better find
+# just              - a better make <3
+# qc                - an advanced RPN cli calculator
+# ripgrep           - a better grep
+# xsv               - fast csv cli toolkit
+# cargo-check       - checks for rust code errors
+# cargo-edit        - add, remove, upgrade dependencies from cli
+# cargo-flamegraph  - generate flamegraphs and profiling data
+# cargo-outdated    - indicates when Rust dependencies are out of date
+# cargo-watch       - reload cargo commands on file save
+cargo install bat exa fd-find just qc ripgrep xsv cargo-check cargo-edit cargo-flamegraph cargo-outdated cargo-watch
 
 # DotBot Setup
 git submodule update --init --recursive .
