@@ -1,3 +1,4 @@
+# For Arch OS with Sway windows manager
 # Exit script upon fail, error if variable undefined, print each command
 set -euxo pipefail
 
@@ -23,6 +24,10 @@ sudo pacman -S --noconfirm --needed texlive-most biber r
 
 # Install Rust
 curl -sSf https://sh.rustup.rs | sh
+source ~/.profile
+rustup install nightly
+rustup component add rustfmt
+rustup component add clippy
 
 # DotBot Setup
 git clone https://github.com/rrybarczyk/dots.git ~/.dots
