@@ -9,7 +9,7 @@ sudo apt -y full-upgrade
 
 # General Enviornment Dev Tools
 sudo apt install -y build-essential llvm libssl-dev pkg-config python3 python-pip3 ruby-full 
-sudo apt install -y tmux git tree ngrep
+sudo apt install -y tmux git tree ngrep zlib1g bgpdump
 
 # Niceities
 sudo apt install -y lolcat 
