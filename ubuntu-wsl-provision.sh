@@ -23,7 +23,7 @@ rustup install nightly
 rustup component add rustfmt
 rustup component add clippy
 
-cargo install ripgrep fd-find just bat exa qc cargo-watch cargo-check cargo-outdated cargo-edit
+cargo install ripgrep fd-find just bat exa qc cargo-watch cargo-check cargo-outdated cargo-edit cargo-flamegraph
 
 # DotBot Setup
 git submodule update --init --recursive .
