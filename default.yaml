@@ -27,6 +27,7 @@
         ~/.bashrc:                              etc/bashrc
         ~/.config/alacritty/alacritty.yml:      etc/alacritty.yml
         ~/.config/git/config:                   etc/gitconfig
+        ~/.config/i3/config:                    etc/i3config
         ~/.profile:                             etc/profile
         ~/.ssh/config:                          etc/ssh-config
         ~/.tmux.conf:                           etc/tmux.conf
