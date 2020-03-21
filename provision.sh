@@ -6,16 +6,13 @@ set -euxo pipefail
 sudo pacman -Syu --noconfirm
 
 # Install packages if they do not already exist, default "y"
-sudo pacman -S --noconfirm --needed tmux git dhcpcd networkmanager tree ngrep openssl ufw pkg-config base-devel openssh netcat mkpkg unzip clang socat feh
-
-# Wayland Enviornment
-sudo pacman -S wayland wayland-protocols meson xorg-server-xwayland egl-wayland libdrm gbm libinput xkbcommon pixman
+sudo pacman -S --noconfirm --needed tmux git dhcpcd networkmanager openssl ufw pkg-config base-devel intelucode openssh mkpkg clang
 
 # X and  i3 Windows Manager Enviornment
-sudo pacman -S --noconfirm --needed dmenu i3status i3-gaps intelucode slock terminus-font xclip wget xorg-server 
+sudo pacman -S --noconfirm --needed xorg-server xorg-xinit dmenu i3status i3-gaps slock xclip 
 
 # General Enviornment Tools
-sudo pacman -S --noconfirm --needed unzip clang feh firefox okular alacritty lolcat alsa-utils lastpass-cli watchexec
+sudo pacman -S --noconfirm --needed unzip clang feh firefox okular alacritty lolcat alsa-utils lastpass-cli watchexec wget socat netcat unzip ngrep tree inkscape
 
 sudo pacman -S --noconfirm --needed dbus bluez bluez-utils pulseaudio-bluetooth alsa-plugins pulseaudio pulseaudio-alsa ponymix
 
