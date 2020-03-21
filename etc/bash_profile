@@ -24,4 +24,4 @@ export PATH="$HOME/tools/hopper/pkg/hopper/opt/hopper-v4/bin:$PATH"
 export PATH="/opt/cuda/bin:$PATH"
 
 # Ruby
-export PATH="/home/rj/.gem/ruby/2.7.0/bin:$PATH"
+export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
