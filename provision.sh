@@ -6,13 +6,13 @@ set -euxo pipefail
 sudo pacman -Syu --noconfirm
 
 # Install packages if they do not already exist, default "y"
-sudo pacman -S --noconfirm --needed tmux git dhcpcd networkmanager tree ngrep openssl ufw pkg-config base-devel openssh netcat mkpkg
+sudo pacman -S --noconfirm --needed tmux git dhcpcd networkmanager tree ngrep openssl ufw pkg-config base-devel openssh netcat mkpkg unzip clang socat feh
 
 # Wayland Enviornment
 sudo pacman -S wayland wayland-protocols meson xorg-server-xwayland egl-wayland libdrm gbm libinput xkbcommon pixman
 
-# Sway Windows Manager Enviornment
-sudo pacman -S --noconfirm --needed sway swayidle swaylock rofi slurp grim
+# X and  i3 Windows Manager Enviornment
+sudo pacman -S --noconfirm --needed dmenu i3status i3-gaps intelucode slock terminus-font xclip wget xorg-server 
 
 # General Enviornment Tools
 sudo pacman -S --noconfirm --needed unzip clang feh firefox okular alacritty lolcat alsa-utils lastpass-cli watchexec
