@@ -11,9 +11,20 @@ sudo apt -y full-upgrade
 sudo apt install -y build-essential llvm libssl-dev pkg-config cmake python python3 python-pip3 ruby-full
 sudo apt install -y tmux git tree ngrep zlib1g bgpdump
 
-
 # Niceities
 sudo apt install -y lolcat 
+
+# Alsa Dev Package
+sudo apt-get install libasound2-dev
+
+# XCB Library for Interoperability with Xlib
+sudo apt install libxcb-shape0-dev libxcb-xfixes0-dev
+
+# Vulkan and PPA for Latest Drivers Install for AMD or Intel Graphics
+sudo add-apt-repository ppa:oibaf/graphics-drivers
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install libvulkan1 mesa-vulkan-drivers vulkan-utils
 
 # Install Rust
 curl -sSf https://sh.rustup.rs | sh | sh -s -- -y
