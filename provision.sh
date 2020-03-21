@@ -25,6 +25,7 @@ source ~/.profile
 rustup install nightly
 rustup component add rustfmt
 rustup component add clippy
+cargo install cargo-edit
 
 # DotBot Setup
 git clone https://github.com/rrybarczyk/dots.git ~/.dots
@@ -43,6 +44,6 @@ cd ~/aur/yay && makepkg -sic
 cd ~
 
 # Install aur packages
-yay -S --needed --noconfirm signal-desktop-bin
+yay -S --needed --noconfirm signal-desktop-bin discord
 
 yay -Syu
