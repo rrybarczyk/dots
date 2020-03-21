@@ -64,6 +64,9 @@ Plug 'junegunn/fzf.vim'
 " fzf binary and runtime path files
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
 
+" glsl Shader syntax highlight
+Plug 'tikhomirov/vim-glsl'
+
 call plug#end()
 
 colorscheme anderson
