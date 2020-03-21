@@ -12,5 +12,6 @@ $ just
 
 ## Branches
 `master`        - Arch OS with Sway windows manager  
-`i3-lxterminal` - Arch OS with i3 windows manager  
+`i3-alcritty`   - Arch OS with i3 windows manager and alcritty terminal
+`i3-lxterminal` - Arch OS with i3 windows manager and lxterminal 
 `wsl-ubuntu`    - Ubuntu on Windows Subsystem for Linux (WSL)  
