@@ -24,4 +24,11 @@ export PATH="$HOME/tools/hopper/pkg/hopper/opt/hopper-v4/bin:$PATH"
 export PATH="/opt/cuda/bin:$PATH"
 
 # Ruby
-export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
+export PATH="/home/rj/.gem/ruby/2.7.0/bin:$PATH"
+
+# Use the python3 interpreter on your path
+export CLOUDSDK_PYTHON=python3
+export CLOUDSDK_GSUTIL_PYTHON=python3
+export CLOUDSDK_BQ_PYTHON=python3
+
+export GOOGLE_APPLICATION_CREDENTIALS="$HOME/Programs/google-cloud-sdk/project-20200309-0-2169f5f2e217.json"

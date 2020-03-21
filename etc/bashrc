@@ -18,7 +18,6 @@ alias lx="exa -laFG --color-scale --color=always --group-directories-first"
 alias bat='bat --theme=GitHub --color=always'
 alias pbcopy="xclip -sel clip"
 alias cargogen="cargo generate --git https://github.com/rrybarczyk/template-rs.git"
-alias qc="$HOME/development/quick-calc/target/release/qcal"
 alias sshot='grim -g "$(slurp)"'
 
 # Color for less and man
@@ -27,3 +26,11 @@ export MANPAGER='less -s -M +Gg'
 export LESS="--RAW-CONTROL-CHARS"
 lesscolors=$HOME/.config/.LESS_TERMCAP
 [[ -f $lesscolors ]] && . $lesscolors
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/rj/Programs/google-cloud-sdk/path.bash.inc' ]; then . '/home/rj/Programs/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/rj/Programs/google-cloud-sdk/completion.bash.inc' ]; then . '/home/rj/Programs/google-cloud-sdk/completion.bash.inc'; fi
