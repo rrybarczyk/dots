@@ -31,11 +31,9 @@ cargo install cargo-edit
 git clone https://github.com/rrybarczyk/dots.git ~/.dots
 cd ~/.dots && git submodule update --init --recursive .
 $(SHELL)=sh ./submodules/dotbot/bin/dotbot -c default.yaml
+cd ~/.dots && just
 
 # Force symlink bash scripts
-ln -sf ~/.dots/etc/bashrc ~/.bashrc
-ln -sf ~/.dots/etc/bash_profile ~/.bash_profile
-ln -sf ~/.dots/etc/profile ~/.profile
 source ~/.bashrc
 
 # Install yay package manager
