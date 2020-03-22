@@ -42,6 +42,10 @@ cd ~/aur/yay && makepkg -sic
 cd ~
 
 # Install aur packages
+# Chat apps
 yay -S --needed --noconfirm signal-desktop-bin discord
+
+# Make DRM work on firefox
+yay -S --needed --noconfirm hal-info hal
 
 yay -Syu
