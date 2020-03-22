@@ -33,3 +33,7 @@ remote BIG-BEEFY-BOI-USER:
 
 local BIG-BEEFY-BOI-USER IP:
     ssh {{BIG-BEEFY-BOI-USER}}@{{IP}} -p 49666
+
+# Start Matlab without the desktop environment
+mlab:
+  matlab -nodesktop -nosplash
