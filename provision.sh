@@ -48,4 +48,7 @@ yay -S --needed --noconfirm signal-desktop-bin discord
 # Make DRM work on firefox
 yay -S --needed --noconfirm hal-info hal
 
+# GLFW
+yay -S --needed --noconfirm glfw-x11 glew
+
 yay -Syu
