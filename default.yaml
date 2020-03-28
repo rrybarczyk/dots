@@ -10,6 +10,7 @@
         - ~/.ssh
 
 - shell:
+        - mkdir -p ~/aur
         - mkdir -p ~/.cargo
         - mkdir -p ~/.config
         - mkdir -p ~/.config/alacritty
@@ -18,7 +19,6 @@
         - mkdir -p ~/.local/share/lpass
         - mkdir -p ~/.ssh
         - mkdir -p ~/.vim/autoload
-        - mkdir -p ~/aur
 
 - link:
         ~/app: app
@@ -30,6 +30,7 @@
         ~/.config/i3/config:                    etc/i3config
         ~/.profile:                             etc/profile
         ~/.secrets:                             etc/secrets
+        ~/.ssh/config:                          etc/ssh-config
         ~/.tmux.conf:                           etc/tmux.conf
         ~/.vim/autoload/plug.vim:               submodules/vim-plug/plug.vim
         ~/.vim/colors/codedark.vim:             etc/vim-colors/codedark.vim

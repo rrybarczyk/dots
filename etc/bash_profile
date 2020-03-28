@@ -11,6 +11,8 @@ export XDG_CACHE_HOME="$HOME"/.cache
 export XDG_DATA_DIRS=/usr/local/share:/usr/share
 export XDG_CONFIG_DIRS=/etc/xdg
 
+# Start the ssh-agent
+eval "$(ssh-agent -s)"
 # Auto sign git commits
 export GPG_TTY=$(tty)
 
