@@ -1,0 +1,18 @@
+# rrybarczyk account
+Host github.com-rrybarczyk
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa
+
+# t420babe account
+Host github.com-t420babe
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/ofl_id_rsa
+
+# discrete-bLog account
+Host github.com-discrete-bLog
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa_dbl
+

@@ -10,6 +10,7 @@
         - ~/.ssh
 
 - shell:
+        - mkdir -p ~/aur
         - mkdir -p ~/.cargo
         - mkdir -p ~/.config
         - mkdir -p ~/.config/alacritty
@@ -20,7 +21,6 @@
         - mkdir -p ~/.local/share/lpass
         - mkdir -p ~/.ssh
         - mkdir -p ~/.vim/autoload
-        - mkdir -p ~/aur
 
 - link:
         ~/app: app
@@ -33,6 +33,7 @@
         ~/.config/swaylock/config:              etc/swaylock.config
         ~/.config/swaynag/config:               etc/swaynag.config
         ~/.profile:                             etc/profile
+        ~/.ssh/config:                          etc/ssh-config
         ~/.tmux.conf:                           etc/tmux.conf
         ~/.vim/autoload/plug.vim:               submodules/vim-plug/plug.vim
         ~/.vimrc:                               etc/vimrc
