@@ -5,7 +5,7 @@ default:
 monitors-bigbeefy:
   xrandr --output DisplayPort-0 --auto --rotate normal --output HDMI-A-0 --auto --left-of DisplayPort-0
 
-montiors-t480:
+monitors-t480:
   xrandr --output eDP-1 --auto --rotate normal --output HDMI-2 --auto --right-of eDP-1
 
 # Turn keyboard backlight on
@@ -28,12 +28,13 @@ b-high:
 
 
 # SSH into big beefy boi
-remote BIG-BEEFY-BOI-USER:
-    ssh {{BIG-BEEFY-BOI-USER}}@141.149.53.225 -p 49666
+remote BIG-BEEFY-BOI-USER IP:
+  ssh {{BIG-BEEFY-BOI-USER}}@{{IP}} -p 49666
 
-local BIG-BEEFY-BOI-USER IP:
-    ssh {{BIG-BEEFY-BOI-USER}}@{{IP}} -p 49666
 
 # Start Matlab without the desktop environment
 mlab:
   matlab -nodesktop -nosplash
+
+local BIG-BEEFY-BOI-USER:
+    ssh {{BIG-BEEFY-BOI-USER}}@192.168.1.167 -p 49666
