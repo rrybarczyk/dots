@@ -9,7 +9,7 @@ sudo pacman -Syu --noconfirm
 sudo pacman -S --noconfirm --needed tmux git dhcpcd networkmanager openssl ufw pkg-config base-devel intelucode openssh mkpkg clang
 
 # X and  i3 Windows Manager Enviornment
-sudo pacman -S --noconfirm --needed xorg-server xorg-xinit dmenu i3status i3-gaps slock xclip 
+sudo pacman -S --noconfirm --needed xorg-server xorg-xinit dmenu i3status i3-gaps slock xclip xorg-xeyes
 
 # General Enviornment Tools
 sudo pacman -S --noconfirm --needed unzip clang feh firefox okular alacritty lolcat alsa-utils lastpass-cli watchexec wget socat netcat unzip ngrep tree inkscape
