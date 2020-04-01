@@ -43,9 +43,6 @@ Plug 'lervag/vimtex'
 " " Solaraized Color Scheme
 " Plug 'altercation/vim-colors-solarized'
 
-" JS-Indent
-Plug 'jason0x43/vim-js-indent'
-
 " Haskell Syntax
 Plug 'neovimhaskell/haskell-vim'
 
@@ -66,6 +63,8 @@ Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
 
 " glsl Shader syntax highlight
 Plug 'tikhomirov/vim-glsl'
+
+Plug 'jelera/vim-javascript-syntax'
 
 call plug#end()
 
