@@ -3,16 +3,21 @@ Host github.com-rrybarczyk
   HostName github.com
   User git
   IdentityFile ~/.ssh/id_rsa
+  AddKeysToAgent yes
+  UseKeychain yes
 
 # t420babe account
 Host github.com-t420babe
-  HostName github.com
-  User git
-  IdentityFile ~/.ssh/ofl_id_rsa
+ HostName github.com
+ User git
+ IdentityFile ~/.ssh/ofl_id_rsa
+ AddKeysToAgent yes
+ UseKeychain yes
 
 # discrete-bLog account
 Host github.com-discrete-bLog
-  HostName github.com
-  User git
-  IdentityFile ~/.ssh/id_rsa_dbl
-
+ HostName github.com
+ User git
+ IdentityFile ~/.ssh/dbl_id_rsa
+ AddKeysToAgent yes
+ UseKeychain yes
