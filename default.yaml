@@ -10,13 +10,9 @@
         - ~/.ssh
 
 - shell:
-        - mkdir -p ~/aur
         - mkdir -p ~/.cargo
         - mkdir -p ~/.config
         - mkdir -p ~/.config/alacritty
-        - mkdir -p ~/.config/sway
-        - mkdir -p ~/.config/swaylock
-        - mkdir -p ~/.config/swaynag
         - mkdir -p ~/.gnupg
         - mkdir -p ~/.local/share/lpass
         - mkdir -p ~/.ssh
@@ -29,12 +25,8 @@
         ~/.bashrc:                              etc/bashrc
         ~/.config/alacritty/alacritty.yml:      etc/alacritty.yml
         ~/.config/git/config:                   etc/gitconfig
-        ~/.config/sway/config:                  etc/sway.config
-        ~/.config/swaylock/config:              etc/swaylock.config
-        ~/.config/swaynag/config:               etc/swaynag.config
         ~/.profile:                             etc/profile
         ~/.ssh/config:                          etc/ssh-config
         ~/.tmux.conf:                           etc/tmux.conf
         ~/.vim/autoload/plug.vim:               submodules/vim-plug/plug.vim
         ~/.vimrc:                               etc/vimrc
-        ~/.xresources:                          etc/xresources

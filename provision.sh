@@ -1,26 +1,16 @@
-# For Arch OS with Sway windows manager
+# For MacOSx
 # Exit script upon fail, error if variable undefined, print each command
 set -euxo pipefail
 
-# Update installed packages
-sudo pacman -Syu --noconfirm
+# Change default shell from zsh to bash (change back with `$ chsh -s /bin/zsh`)
+chsh -s /bin/bash
 
-# Install packages if they do not already exist, default "y"
-sudo pacman -S --noconfirm --needed tmux git dhcpcd networkmanager tree ngrep openssl ufw pkg-config base-devel openssh netcat mkpkg
+# Install brew package manger
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-# Wayland Enviornment
-sudo pacman -S wayland wayland-protocols meson xorg-server-xwayland egl-wayland libdrm gbm libinput xkbcommon pixman
-
-# Sway Windows Manager Enviornment
-sudo pacman -S --noconfirm --needed sway swayidle swaylock rofi slurp grim
-
-# General Enviornment Tools
-sudo pacman -S --noconfirm --needed unzip clang feh firefox okular alacritty lolcat alsa-utils lastpass-cli watchexec
-
-sudo pacman -S --noconfirm --needed dbus bluez bluez-utils pulseaudio-bluetooth alsa-plugins pulseaudio pulseaudio-alsa ponymix
-
-# LaTeX Development
-sudo pacman -S --noconfirm --needed texlive-most biber r
+brew install tmux wget imagemagick htop tree lolcat lastpass-cli watchexec
+brew cask install basictex 
+# brew cask install firefox
 
 # Install Rust
 curl -sSf https://sh.rustup.rs | sh
@@ -29,23 +19,18 @@ rustup install nightly
 rustup component add rustfmt
 rustup component add clippy
 
-# DotBot Setup
-git clone https://github.com/rrybarczyk/dots.git ~/.dots
-cd ~/.dots && git submodule update --init --recursive .
-$(SHELL)=sh ./submodules/dotbot/bin/dotbot -c default.yaml
+# bat               - a colorful cat
+# exa               - a colorful ls
+# fd-find           - a better find
+# just              - a better make <3
+# qc                - an advanced RPN cli calculator
+# ripgrep           - a better grep
+# xsv               - fast csv cli toolkit
+# cargo-check       - checks for rust code errors
+# cargo-edit        - add, remove, upgrade dependencies from cli
+# cargo-flamegraph  - generate flamegraphs and profiling data
+# cargo-outdated    - indicates when Rust dependencies are out of date
+# cargo-watch       - reload cargo commands on file save
+cargo install bat exa fd-find just qc ripgrep xsv cargo-check cargo-edit cargo-flamegraph cargo-outdated cargo-watch
 
-# Force symlink bash scripts
-ln -sf ~/.dots/etc/bashrc ~/.bashrc
-ln -sf ~/.dots/etc/bash_profile ~/.bash_profile
-ln -sf ~/.dots/etc/profile ~/.profile
-source ~/.bashrc
-
-# Install yay package manager
-cd ~/aur && git clone https://aur.archlinux.org/yay.git
-cd ~/aur/yay && makepkg -sic
-cd ~
-
-# Install aur packages
-yay -S --needed --noconfirm signal-desktop-bin
-
-yay -Syu
+just
