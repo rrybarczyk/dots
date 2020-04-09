@@ -8,9 +8,9 @@ chsh -s /bin/bash
 # Install brew package manger
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-brew install tmux wget imagemagick htop tree lolcat lastpass-cli watchexec
+brew install tmux wget imagemagick htop tree lolcat lastpass-cli watchexec gtime
 brew cask install basictex 
-# brew cask install firefox
+brew cask install ngrok
 
 # Install Rust
 curl -sSf https://sh.rustup.rs | sh
@@ -22,15 +22,16 @@ rustup component add clippy
 # bat               - a colorful cat
 # exa               - a colorful ls
 # fd-find           - a better find
+# hexyl             - hex dump
 # just              - a better make <3
 # qc                - an advanced RPN cli calculator
 # ripgrep           - a better grep
 # xsv               - fast csv cli toolkit
 # cargo-check       - checks for rust code errors
 # cargo-edit        - add, remove, upgrade dependencies from cli
-# cargo-flamegraph  - generate flamegraphs and profiling data
+# flamegraph  - generate flamegraphs and profiling data
 # cargo-outdated    - indicates when Rust dependencies are out of date
 # cargo-watch       - reload cargo commands on file save
-cargo install bat exa fd-find just qc ripgrep xsv cargo-check cargo-edit cargo-flamegraph cargo-outdated cargo-watch
+cargo install bat exa fd-find flamegraph hexyl just qc ripgrep xsv cargo-check cargo-edit cargo-outdated cargo-watch
 
 just
