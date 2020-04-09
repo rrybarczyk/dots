@@ -12,6 +12,7 @@ $ just
 
 ## Branches
 `master`        - Arch OS with Sway windows manager  
-`i3-alcritty`   - Arch OS with i3 windows manager and alcritty terminal
-`i3-lxterminal` - Arch OS with i3 windows manager and lxterminal 
-`wsl-ubuntu`    - Ubuntu on Windows Subsystem for Linux (WSL)  
+`i3-alcritty`   - Arch OS with i3 windows manager and alacritty terminal  
+`i3-lxterminal` - Arch OS with i3 windows manager and lxterminal   
+`wsl-ubuntu`    - Ubuntu on Windows Subsystem for Linux (WSL)    
+`mac-alacritty` - MacOSx, bash shell, alacritty terminal  
