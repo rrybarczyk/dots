@@ -8,7 +8,7 @@ chsh -s /bin/bash
 # Install brew package manger
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-brew install tmux wget imagemagick htop tree lolcat lastpass-cli watchexec gtime
+brew install tmux wget imagemagick htop tree lolcat lastpass-cli watchexec gtime gnupg2
 brew cask install basictex 
 brew cask install ngrok
 
