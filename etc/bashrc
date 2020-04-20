@@ -16,9 +16,7 @@ set -o vi
 alias ll="ls -la"
 alias lx="exa -laFG --color-scale --color=always --group-directories-first"
 alias bat='bat --theme=GitHub --color=always'
-alias pbcopy="xclip -sel clip"
 alias cargogen="cargo generate --git https://github.com/rrybarczyk/template-rs.git"
-alias sshot='grim -g "$(slurp)"'
 
 # Color for less and man
 # http://www.bytesizedworkbench.com/blog/2017/10/24/the-joy-of-alacritty/
