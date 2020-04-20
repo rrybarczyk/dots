@@ -11,6 +11,7 @@ chsh -s /bin/bash
 brew install tmux wget imagemagick htop tree lolcat lastpass-cli watchexec gtime gnupg2
 brew cask install basictex 
 brew cask install ngrok
+brew cask install wireshark
 
 # Install Rust
 curl -sSf https://sh.rustup.rs | sh
