@@ -17,6 +17,9 @@ bl-off:
     echo 0 | sudo tee /sys/class/leds/tpacpi\:\:kbd_backlight/brightness 
 
 # Adjust screen brightness levels
+b BRIGHTNESS:
+    echo -n {{BRIGHTNESS}} > /sys/class/backlight/intel_backlight/brightness
+
 b-low:
     echo -n 100 > /sys/class/backlight/intel_backlight/brightness
 
@@ -26,15 +29,17 @@ b-mid:
 b-high:
     echo -n 999 > /sys/class/backlight/intel_backlight/brightness
 
-
 # SSH into big beefy boi
 remote BIG-BEEFY-BOI-USER IP:
   ssh {{BIG-BEEFY-BOI-USER}}@{{IP}} -p 49666
 
+local BIG-BEEFY-BOI-USER:
+    ssh {{BIG-BEEFY-BOI-USER}}@192.168.1.167 -p 49666
 
 # Start Matlab without the desktop environment
 mlab:
   matlab -nodesktop -nosplash
 
-local BIG-BEEFY-BOI-USER:
-    ssh {{BIG-BEEFY-BOI-USER}}@192.168.1.167 -p 49666
+# Take a screenshot
+sshot:
+    slurp | grim -g - /home/rj/Pictures/ScreenShots/$(date +'%s_grim.png')
