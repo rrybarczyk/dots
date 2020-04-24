@@ -51,4 +51,6 @@ yay -S --needed --noconfirm hal-info hal
 # GLFW
 yay -S --needed --noconfirm glfw-x11 glew
 
+yay -S --needed --noconfirm spotify
+
 yay -Syu
