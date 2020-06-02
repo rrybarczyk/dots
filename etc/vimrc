@@ -100,7 +100,7 @@ nnoremap <C-h> <C-w><C-h>
 "-----------------------------------------------------------------------------
 "---------------------------------- RUST -------------------------------------
 let g:rustfmt_autosave=1            "Auto format with rustfmt on save
-
+let g:rust_recommended_style=0      "Disable recommended style (recommended is 4 spaces, but I like 2 spaces)
 " filetype indent on
 
 
