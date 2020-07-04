@@ -1,0 +1,5 @@
+open-connection:
+  ngrok tcp 22
+
+matlab-start:
+  matlab -nodesktop -nosplash

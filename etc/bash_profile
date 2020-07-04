@@ -25,6 +25,9 @@ export DOTS="$HOME/development/dots"
 export PATH="$HOME/tools/hopper/pkg/hopper/opt/hopper-v4/bin:$PATH"
 export PATH="/opt/cuda/bin:$PATH"
 
+# Matlab
+export PATH="/Applications/MATLAB_R2020a.app/bin:$PATH"
+
 # Ruby
 export PATH="/home/rj/.gem/ruby/2.7.0/bin:$PATH"
 
