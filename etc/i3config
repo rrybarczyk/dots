@@ -167,6 +167,10 @@ bindsym $mod+r mode "resize"
 
 for_window [class=".*"] border pixel 0
 gaps inner 10
+# gaps outer current toggle 60
+
+# smart_borders on
+# hide_edge_borders smart_no_gaps
 
 # on startup
 exec_always --no-startup-id ~/.fehbg
