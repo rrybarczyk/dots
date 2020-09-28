@@ -19,6 +19,9 @@ Plug 'rust-lang/rust.vim'
 " TOML Syntax
 Plug 'cespare/vim-toml'
 
+" " C Syntax
+" Plug 'vim-scripts/c.vim'
+
 " C++ Syntax
 Plug 'octol/vim-cpp-enhanced-highlight'
 
@@ -62,6 +65,8 @@ Plug 'tikhomirov/vim-glsl'
 
 Plug 'chrisbra/unicode.vim'
 
+" Plug 'patriciogonzalezvivo/vim-glslViewer'
+
 call plug#end()
 
 "------------------------------------------------------------------
@@ -71,6 +76,8 @@ if has ("autocmd")
 endif
 
 let mapleader = "\<space>"            " Map space as leader
+set pastetoggle=<F9>									" Toggle between paste and nopaste mode with F9
+set formatoptions-=cro                " Don't comment next line
 
 set hidden                            " Can move away from unsaved files
 set backspace=indent,eol,start
@@ -81,6 +88,7 @@ syntax on								              "Turns on syntax
 " colo molokai
 " colo Dark2
 colo codedark
+
 
 set background=dark
 set shiftwidth=2
@@ -151,7 +159,7 @@ au BufNewFile, BufRead *.jxs set filetype=xml   " Use XML syntax for JXS files
 "---------------------------------- RUST -------------------------------------
 let g:rustfmt_autosave=1            "Auto format with rustfmt on save
 let g:rust_recommended_style=0      "Disable recommended style (recommended is 4 spaces, but I like 2 spaces)
-" filetype indent on
+filetype indent on
 
 "------------------------------------------------------------------
 "---------------------------- Fuzzy -------------------------------
@@ -225,3 +233,14 @@ let NERDTreeNaturalSort = 1
 let g:NERDTreeWinSize = 35 
 
 let g:closetag_filenames = '*.html'
+
+
+:command W w
+:command Q q
+:command Wa wa
+:command WA wa
+:command Wq wq
+:command WQ wq
+:command Wqa wqa
+:command WQa wqa
+:command WQA wqa

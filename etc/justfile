@@ -3,3 +3,15 @@ open-connection:
 
 matlab-start:
   matlab -nodesktop -nosplash
+
+# Pass in youtube link
+# Ex: $ just yt-to-wave https://youtu.be/IF7wc5Le-4g
+# Source: https://ma.ttias.be/youtube-dl-download-audio-files-youtube-mac
+yt-to-wav YT_LINK:
+  youtube-dl --extract-audio --audio-format wav --prefer-ffmpeg {{YT_LINK}}
+
+# Pass in path to .mp3 or .mp4
+# Ex: $ just mpx-to-wav
+# Source: https://github.com/lbgists/audio-spectrum-matplotlib/blob/master/merge.sh
+mpx-to-wav MPX:
+  ffmpeg -i temp.mp4 -i temp.wav -vcodec copy -acodec libmp3lame {{MPX}}
