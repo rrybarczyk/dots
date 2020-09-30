@@ -30,6 +30,9 @@ b-mid:
 b-high:
   echo -n 999 > /sys/class/backlight/intel_backlight/brightness
 
+which-gpu:
+  lspci -k | grep -A 2 -E "(VGA|3D)"
+
 # SSH into big beefy boi
 remote BIG-BEEFY-BOI-USER IP:
   ssh {{BIG-BEEFY-BOI-USER}}@{{IP}} -p 49666
