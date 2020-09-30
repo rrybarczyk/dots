@@ -24,6 +24,15 @@ yay -S --noconfirm --needed dbus bluez bluez-utils pulseaudio-bluetooth alsa-plu
 # Vulkan
 yay -S --noconfirm --needed vulkan-tools vulkan-dev vulkan-intel
 
+# GLFW to manage windows for my Vulkan apps, install glfw-x11 for when I use i3wm, and glfw-wayland for when I use sway
+yay -S --noconfirm --needed glfw-x11 glfw-wayland
+
+# GLM - linear algebra lib for my Vulkan apps
+yay -S --noconfirm --needed glm
+
+# Shader tools, lib, and tests for shader compiler
+yay -S --noconfirm --needed shaderc
+
 # LaTeX Development
 yay -S --noconfirm --needed texlive-most biber r
 
