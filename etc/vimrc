@@ -223,3 +223,4 @@ let g:closetag_filenames = '*.html'
 
 "---- HDL highlighting settings---
 hi link vhdlError Normal " Remove annoying highlight
+
