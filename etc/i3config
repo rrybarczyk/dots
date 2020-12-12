@@ -8,6 +8,8 @@
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
+#
+# Check keymaps: `$ xmodmap -pm`
 
 set $mod Mod4
 
@@ -37,7 +39,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+space exec dmenu_run
+bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -85,7 +87,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-# bindsym $mod+space focus mode_toggle
+bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -158,8 +160,7 @@ mode "resize" {
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+        bindsym Escape mode "default" bindsym $mod+r mode "default"
 }
 
 bindsym $mod+r mode "resize"
@@ -183,3 +184,7 @@ bar {
 
 # super + shift + c -> reloads config (may not always apply new changes)
 # super + shift + r -> restarts i3 (but not x)
+
+# Fullscreen mode in container
+# mod1 = alt
+bindsym $mod+$mod1+f focus parent; fullscreen; focus child
