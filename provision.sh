@@ -21,6 +21,9 @@ yay -S --noconfirm --needed xorg-server xorg-xinit dmenu i3status i3-gaps slock 
 yay -S --noconfirm --needed unzip clang feh firefox okular alacritty lolcat alsa-utils lastpass-cli watchexec wget socat netcat unzip ngrep tree inkscape
 yay -S --noconfirm --needed dbus bluez bluez-utils pulseaudio-bluetooth alsa-plugins pulseaudio pulseaudio-alsa ponymix
 
+# Monitoring
+yay -S --noconfirm --needed intel-gpu-tools htop
+
 # Vulkan
 yay -S --noconfirm --needed vulkan-tools vulkan-dev vulkan-intel
 
@@ -64,5 +67,9 @@ yay -S --needed --noconfirm hal-info hal
 yay -S --needed --noconfirm glfw-x11 glew
 
 yay -S --needed --noconfirm spotify
+
+# Fonts 
+yay -S --needed --noconfirm adobe-source-han-sans-jp-fonts
+
 
 yay -Syu
