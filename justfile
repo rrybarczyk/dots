@@ -5,9 +5,9 @@ default:
 monitors-bigbeefy:
   xrandr --output DisplayPort-0 --auto --rotate normal --output HDMI-A-0 --auto --left-of DisplayPort-0
 
-# `"DP-1" left`, `"HDMI-2 right"`
-t480-monitors DISPLAY SIDE:
-  xrandr --output eDP-1 --auto --rotate normal --output {{DISPLAY}} --auto --{{SIDE}}-of eDP-1
+# `"DP-1" left-of`, `"HDMI-2 right-of"`, `"DP-1" above`, `"HDMI-2 below"`, 
+m DISPLAY SIDE:
+  xrandr --output eDP-1 --auto --rotate normal --output {{DISPLAY}} --auto --{{SIDE}} eDP-1
 
 three-monitors:
   xrandr --output eDP-1 --auto --output HDMI-2 --auto --right-of eDP-1 --output DP-1 --auto --left-of eDP-1
@@ -76,3 +76,9 @@ nmap-ip:
 
 figlet-clock:
   while true; do tput clear; date +"%H : %M : %S" | figlet ; sleep 1; done
+
+termbin FILE:
+  cat {{FILE}} | nc termbin.com 9999
+
+largest-files:
+  sudo find / -xdev -type f -size +100M
