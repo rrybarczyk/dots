@@ -26,6 +26,14 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install libvulkan1 mesa-vulkan-drivers vulkan-utils
 
+mv ~/.bashrc ~/.bashrc.bk
+mv ~/.profile ~/.profile.bk
+mv ~/.bash_profile ~/.bash_profile.bk
+
+# DotBot Setup
+git submodule update --init --recursive .
+./submodules/dotbot/bin/dotbot -c default.yaml
+
 # Install Rust
 curl -sSf https://sh.rustup.rs | sh | sh -s -- -y
 source $HOME/.cargo/bin
@@ -51,14 +59,5 @@ rustup component add clippy
 # cargo-outdated    - indicates when Rust dependencies are out of date
 # cargo-watch       - reload cargo commands on file save
 cargo install bat exa fd-find just qc ripgrep xsv cargo-check cargo-edit cargo-flamegraph cargo-outdated cargo-watch
-
-# DotBot Setup
-git submodule update --init --recursive .
-./submodules/dotbot/bin/dotbot -c default.yaml
-
-# Force symlink bash scripts
-# ln -sf ~/.dots/etc/bashrc ~/.bashrc
-# ln -sf ~/.dots/etc/bash_profile ~/.bash_profile
-# ln -sf ~/.dots/etc/profile ~/.profile
 source ~/.bashrc
 

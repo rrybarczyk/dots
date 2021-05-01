@@ -7,16 +7,20 @@ call plug#begin('~/.vim/plugged')
 Plug 'christoomey/vim-tmux-navigator'
 
 " NERDTree
-Plug 'scrooloose/nerdtree',     {'on': 'NERDTreeToggle'} " nerd tree file drawer
+" Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree',     {'on': 'NERDTreeToggle'} " nerd tree file drawer
 
 " NERDCommenter
-Plug 'scrooloose/nerdcommenter'
+Plug 'preservim/nerdcommenter'
 
 " Rust Synatx
 Plug 'rust-lang/rust.vim'
 
 " TOML Syntax
 Plug 'cespare/vim-toml'
+
+" " C Syntax
+" Plug 'vim-scripts/c.vim'
 
 " C++ Syntax
 Plug 'octol/vim-cpp-enhanced-highlight'
@@ -40,20 +44,8 @@ Plug 'lazywei/vim-matlab'
 " LaTeX Syntax
 Plug 'lervag/vimtex'
 
-" " Solaraized Color Scheme
-" Plug 'altercation/vim-colors-solarized'
-
-" JS-Indent
-Plug 'jason0x43/vim-js-indent'
-
 " Haskell Syntax
 Plug 'neovimhaskell/haskell-vim'
-
-" Syntax
-Plug 'rafi/awesome-vim-colorschemes'
-
-" R Plugin
-Plug 'vim-scripts/Vim-R-plugin'
 
 " Fuzzy searching using fzf
 Plug 'junegunn/fzf.vim'
@@ -61,19 +53,44 @@ Plug 'junegunn/fzf.vim'
 " fzf binary and runtime path files
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
 
+" A very fast, multi-syntax context-sensitive color name highlighter
+Plug 'ap/vim-css-color'
+
+" Highlight sass colors and color variables
+Plug 'cakebaker/scss-syntax.vim'
+
+Plug 'alvan/vim-closetag'
+
+Plug 'tikhomirov/vim-glsl'
+
+Plug 'chrisbra/unicode.vim'
+
+" Plug 'patriciogonzalezvivo/vim-glslViewer'
+
 call plug#end()
 
-colorscheme anderson
 "------------------------------------------------------------------
 "---------------------------- My Syntax ----------------------------
-set nu rnu								   "Hybrid relative line number
-set ru									   "Ruler
-syntax on								   "Turns on syntax
-
 if has ("autocmd")
    filetype plugin indent on
 endif
 
+let mapleader = "\<space>"            " Map space as leader
+set pastetoggle=<F9>									" Toggle between paste and nopaste mode with F9
+set formatoptions-=cro                " Don't comment next line
+
+set hidden                            " Can move away from unsaved files
+set backspace=indent,eol,start
+
+set nu rnu								            "Hybrid relative line number
+set ru									              "Ruler
+syntax on								              "Turns on syntax
+" colo molokai
+" colo Dark2
+colo codedark
+
+
+set background=dark
 set shiftwidth=2
 set softtabstop=2                   "Indent by 2 spaces when pressing <TA>
 set autoindent                      "Keep indentation from previous line
@@ -94,25 +111,55 @@ nnoremap <C-k> <C-w><C-k>
 nnoremap <C-l> <C-w><C-l>
 nnoremap <C-h> <C-w><C-h>
 
- set visualbell 
- set noerrorbells 
+"put cursor on file upon startup
+autocmd VimEnter * wincmd p
+
+" mapping for moving through files
+nnoremap gT :bprev<CR>
+nnoremap gt :bnext<CR>
+
+" mapping for managing tabs
+map <leader>tn :tabnew<cr>
+map <leader>tq :tabclose<cr>
+map <leader>tt :tabnext<cr>
+map <leader>tT :tabprevious<cr>
+
+" source ~/.vimrc
+nnoremap <leader>sv :source $MYVIMRC<cr>:nohl<cr>
+
+"---- HDL highlighting settings---
+hi link vhdlError Normal " Remove annoying highlight
+
+
+" display digraphs
+nnoremap <leader>hd :Capture digraphs<cr>|
+
+" Latin subscript digraph shortcuts
+execute "digraphs ks " . 0x2096 
+execute "digraphs as " . 0x2090
+execute "digraphs es " . 0x2091
+execute "digraphs hs " . 0x2095
+execute "digraphs is " . 0x1D62
+execute "digraphs ks " . 0x2096
+execute "digraphs ls " . 0x2097
+execute "digraphs ms " . 0x2098
+execute "digraphs ns " . 0x2099
+execute "digraphs os " . 0x2092
+execute "digraphs ps " . 0x209A
+execute "digraphs rs " . 0x1D63
+execute "digraphs ss " . 0x209B
+execute "digraphs ts " . 0x209C
+execute "digraphs us " . 0x1D64
+execute "digraphs vs " . 0x1D65
+execute "digraphs xs " . 0x2093
+
+au BufNewFile, BufRead *.jxs set filetype=xml   " Use XML syntax for JXS files
 
 "-----------------------------------------------------------------------------
 "---------------------------------- RUST -------------------------------------
 let g:rustfmt_autosave=1            "Auto format with rustfmt on save
-
-"-----------------------------------------------------------------------------
-"--------------------------- HTML File Indent -------------------------------
+let g:rust_recommended_style=0      "Disable recommended style (recommended is 4 spaces, but I like 2 spaces)
 filetype indent on
-set filetype=html
-
-"-----------------------------------------------------------------------------
-"--------------------------- R Scripts ---------------------------------------
-let maplocalleader = ","
-vmap <Space> <Plug>RDSendSelection
-nmap <Space> <Plug>RDSendLine
-let vimrplugin_applescript=0
-let vimrplugin_vsplit=1
 
 "------------------------------------------------------------------
 "---------------------------- Fuzzy -------------------------------
@@ -121,9 +168,6 @@ nnoremap <c-p> :Files<cr>
 
 "------------------------------------------------------------------
 "---------------------------- NERDCommenter -----------------------
-"https://github.com/docunext/closetag.vim.git 
-" open NERDTree on the right side
-" let g:NERDTreeWinPos = "right"
 " automatically close nerd tree when you open a file
 let NERDTreeQuitOnOpen = 1
 " Add spaces after comment delimiters by default
@@ -170,39 +214,33 @@ call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
 call NERDTreeHighlightFile('txt', 'blue', 'none', 'red', '#151515')
 call NERDTreeHighlightFile('ini', 'Red', 'none', 'yellow', '#151515')
 call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+call NERDTreeHighlightFile('yaml', 'blue', 'none', '#3366FF', '#151515')
 
- "put cursor on file upon startup
- autocmd VimEnter * wincmd p
- " mapping for moving files
- nnoremap gT :bprev<CR>
- nnoremap gt :bnext<CR>
- " mapping for managing tabs
- map <leader>tn :tabnew<cr>
- map <leader>to :tabnew<cr>
- map <leader>tc :tabclose<cr>
- map <leader>tm :tabmove<cr>
- " Close file
- nnoremap <leader>q :bp<cr>:bd #<cr>
- " Toggles NERDTree side bar
- map <C-o> :NERDTreeToggle<CR>
- " Disables bookmarks and 'Press ? for help' text
- let NERDTreeMinimalUI = 1
- " Displays line numbers
- let NERDTreeShowLineNumbers = 1
- " Show hidden files
- let NERDTreeShowHidden = 1
- " Change current working dir based on file location
- let NERDTreeChDirMode = 2
- " Use natural sort order
- let NERDTreeNaturalSort = 1
- let g:NERDTreeWinSize = 35 
+" Close file
+nnoremap <leader>q :bp<cr>:bd #<cr>
+" Toggles NERDTree side bar
+map <C-o> :NERDTreeToggle<CR>
+" Disables bookmarks and 'Press ? for help' text
+let NERDTreeMinimalUI = 1
+" Displays line numbers
+let NERDTreeShowLineNumbers = 1
+" Show hidden files
+let NERDTreeShowHidden = 1
+" Change current working dir based on file location
+let NERDTreeChDirMode = 2
+" Use natural sort order
+let NERDTreeNaturalSort = 1
+let g:NERDTreeWinSize = 35 
+
+let g:closetag_filenames = '*.html'
 
 
- "-----------------------------------------------------------------------------
- "---------------------------- Solarized Color Scheme -------------------------
- " set background=dark
- let g:solarized_termtrans=1
- let g:solarized_termcolors=256
- let g:solarized_contrast="high"
- let g:solarized_visibility="high"
- " colorscheme solarized
+:command W w
+:command Q q
+:command Wa wa
+:command WA wa
+:command Wq wq
+:command WQ wq
+:command Wqa wqa
+:command WQa wqa
+:command WQA wqa
