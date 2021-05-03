@@ -131,4 +131,3 @@ alias cargogen="cargo generate --git https://github.com/rrybarczyk/template-rs.g
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 . "$HOME/.cargo/env"
-export BDB_PREFIX='/home/ubuntu/Dev/dogecoin/db4'
