@@ -20,8 +20,8 @@ git submodule update --init --recursive .
 ./submodules/dotbot/bin/dotbot -c default.yaml
 
 # Install Rust
-curl -sSf https://sh.rustup.rs | sh | sh -s -- -y
-source $HOME/.cargo/bin
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
 rustup install nightly
 rustup component add rustfmt
 rustup component add clippy
