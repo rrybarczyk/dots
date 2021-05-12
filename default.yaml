@@ -14,19 +14,15 @@
         - mkdir -p ~/.config
         - mkdir -p ~/.config/alacritty
         - mkdir -p ~/.gnupg
-        - mkdir -p ~/.local/share/lpass
         - mkdir -p ~/.ssh
         - mkdir -p ~/.vim/autoload
         - mkdir -p ~/.vim/colors
 
 - link:
-        ~/app: app
-
         ~/.bash_profile:                        etc/bash_profile
         ~/.bashrc:                              etc/bashrc
         ~/.config/alacritty/alacritty.yml:      etc/alacritty.yml
         ~/.config/git/config:                   etc/gitconfig
-        ~/justfile:                             etc/justfile
         ~/.profile:                             etc/profile
         ~/.ssh/config:                          etc/ssh-config
         ~/.tmux.conf:                           etc/tmux.conf
@@ -35,4 +31,4 @@
         ~/.vim/colors/Dark2.vim:                etc/vim-colors/Dark2.vim
         ~/.vim/colors/molokai.vim:              etc/vim-colors/molokai.vim
         ~/.vimrc:                               etc/vimrc
-        
+        ~/vim:                                  etc/vim

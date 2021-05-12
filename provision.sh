@@ -2,16 +2,16 @@
 # Exit script upon fail, error if variable undefined, print each command
 set -euxo pipefail
 
-# Change default shell from zsh to bash (change back with `$ chsh -s /bin/zsh`)
-chsh -s /bin/bash
-
-# Install brew package manger
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-
-brew install tmux wget imagemagick htop tree lolcat lastpass-cli watchexec gnu-time gnupg2 git-lfs tmux-mem-cpu-load
-brew cask install mactex-no-gui
-brew cask install ngrok
-brew cask install wireshark
+## Change default shell from zsh to bash (change back with `$ chsh -s /bin/zsh`)
+## chsh -s /bin/bash
+#
+## Install brew package manger
+#/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+#
+#brew install tmux wget imagemagick htop tree lolcat lastpass-cli watchexec gnu-time gnupg2 git-lfs tmux-mem-cpu-load
+#brew cask install mactex-no-gui
+#brew cask install ngrok
+#brew cask install wireshark
 
 # Install Rust
 curl -sSf https://sh.rustup.rs | sh
@@ -33,6 +33,5 @@ rustup component add clippy
 # flamegraph  - generate flamegraphs and profiling data
 # cargo-outdated    - indicates when Rust dependencies are out of date
 # cargo-watch       - reload cargo commands on file save
-cargo install bat exa fd-find flamegraph hexyl just qc ripgrep xsv cargo-check cargo-edit cargo-outdated cargo-watch
-
-just
+cargo install just
+cargo install bat exa fd-find hexyl qc ripgrep xsv cargo-check cargo-edit cargo-outdated cargo-watch

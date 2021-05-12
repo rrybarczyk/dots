@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 # Prompt format
-PS1="\[\033[0;37m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[0;31m\]\342\234\227\[\033[0;37m\]]\342\224\200\")[$(if [[ ${EUID} == 0 ]]; then echo '\[\033[0;31m\]\h'; else echo 't420babe@\[\033[0;96m\]\h'; fi)\[\033[0;37m\]]\342\224\200[\[\033[0;32m\]\w\[\033[0;37m\]]\n\[\033[0;37m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]"
+#PS1="\[\033[0;37m\]\342\224\214\342\224\200\$([[ \$? != 0 ]] && echo \"[\[\033[0;31m\]\342\234\227\[\033[0;37m\]]\342\224\200\")[$(if [[ ${EUID} == 0 ]]; then echo '\[\033[0;31m\]\h'; else echo 't420babe@\[\033[0;96m\]\h'; fi)\[\033[0;37m\]]\342\224\200[\[\033[0;32m\]\w\[\033[0;37m\]]\n\[\033[0;37m\]\342\224\224\342\224\200\342\224\200\342\225\274 \[\033[0m\]"
 
 # Put prompt in vi mode
 set -o vi
@@ -34,3 +34,4 @@ if [ -f '/home/rj/Programs/google-cloud-sdk/path.bash.inc' ]; then . '/home/rj/P
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/rj/Programs/google-cloud-sdk/completion.bash.inc' ]; then . '/home/rj/Programs/google-cloud-sdk/completion.bash.inc'; fi
+source "$HOME/.cargo/env"
