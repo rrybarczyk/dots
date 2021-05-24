@@ -244,3 +244,6 @@ let g:closetag_filenames = '*.html'
 :command Wqa wqa
 :command WQa wqa
 :command WQA wqa
+
+" ROT13
+map <F3> ggg?G
