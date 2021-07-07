@@ -93,6 +93,9 @@ call plug#end()
 
 "------------------------------------------------------------------
 "---------------------------- My Syntax ----------------------------
+let mapleader = "\<space>"  " space is my leader
+set pastetoggle=<F9>        " map `:set paste` to F9 (can use in insert mode!)
+
 if (has("termguicolors"))
  set termguicolors
 endif
@@ -139,41 +142,100 @@ nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 
 "-----------------------------------------------------------------------------
+"---------------------------------- RUST-ANALYZER LSP BEGIN ------------------
+" https://sharksforarms.dev/posts/neovim-rust/
+
+" Set completeopt to have a better completion experience
+" :help completeopt
+" menuone: popup even when there's only one match
+" noinsert: Do not insert text until a selection is made
+" noselect: Do not select, force user to select one from the menu
+set completeopt=menuone,noinsert,noselect
+
+" Avoid showing extra messages when using completion
+set shortmess+=c
+
+" Configure LSP
+" https://github.com/neovim/nvim-lspconfig#rust_analyzer
+lua <<EOF
+
+-- nvim_lsp object
+local nvim_lsp = require'lspconfig'
+
+-- function to attach completion when setting up lsp
+local on_attach = function(client)
+    require'completion'.on_attach(client)
+end
+
+-- Enable rust_analyzer
+nvim_lsp.rust_analyzer.setup({ on_attach=on_attach })
+
+-- Enable diagnostics
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    virtual_text = true,
+    signs = true,
+    update_in_insert = true,
+  }
+)
+EOF
+
+"---------------------------------- RUST-ANALYZER LSP END --------------------
+"-----------------------------------------------------------------------------
+
+
+"-----------------------------------------------------------------------------
+"---------------------------------- LSP BEGIN --------------------------------
+" LSP tab completion
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" use <Tab> as trigger keys
+imap <Tab> <Plug>(completion_smart_tab)
+imap <S-Tab> <Plug>(completion_smart_s_tab)
+
+" Code navigation shortcuts
+nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
+nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
+nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
+nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
+
+" Code actions
+nnoremap <silent> ga    <cmd>lua vim.lsp.buf.code_action()<CR>
+
+" """ Diagnostics
+" " Set updatetime for CursorHold
+" " 300ms of no cursor movement to trigger CursorHold
+" set updatetime=300
+" " Show diagnostic popup on cursor hold
+" autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
+" "vim.lsp.util.buf_clear_diagnostics(0, vim.lsp.util.get_line_diagnostics())
+"
+"
+" " Goto previous/next diagnostic warning/error
+" nnoremap <silent> g[ <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+" nnoremap <silent> g] <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+"
+" " Fixed column for the diagnostics, removes warnings/errors jitter
+" set signcolumn=yes
+"
+" " Enable type inlay hints
+" autocmd CursorMoved,InsertLeave,BufEnter,BufWinEnter,TabEnter,BufWritePost *
+" \ lua require'lsp_extensions'.inlay_hints{ prefix = '', highlight = "Comment", enabled = {"TypeHint", "ChainingHint", "ParameterHint"} }
+
+"---------------------------------- LSP END ----------------------------------
+"-----------------------------------------------------------------------------
+
+
+"-----------------------------------------------------------------------------
 "---------------------------------- RUST -------------------------------------
 let g:rustfmt_autosave=1            "Auto format with rustfmt on save
-
-" filetype indent on
-
-" display digraphs
-nnoremap <leader>hd :Capture digraphs<cr>
-let mapleader = "\<space>"  " space is my leader
-set pastetoggle=<F9>        " map `:set paste` to F9 (can use in insert mode!)
-
-" For when I press shift accidentally
-" :command W w
-" :command Q q
-" :command Wa wa
-" :command WA wa
-" :command Wq wq
-" :command WQ wq
-" :command Wqa wqa
-" :command WQa wqa
-" :command WQA wqa
-
-lua << EOF
-require'lspconfig'.pyright.setup{}
-EOF
-" lua << EOF
-" require'nvim_lsp'.pyls.setup{}
-" EOF
-set completeopt-=preview
-autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
-
-" require'lspconfig'.pyright.setup{}
-
-"" rust << EOF
-" require'lspconfig'.rust_analyzer.setup{}
-" " EOF
 
 
 "------------------------------------------------------------------
@@ -290,3 +352,14 @@ map <leader>tm :tabmove<cr>
 
 " source ~/.vimrc
 nnoremap <leader>sv :source $MYVIMRC<cr>:nohl<cr>
+
+" For when I press shift accidentally
+" :command W w
+" :command Q q
+" :command Wa wa
+" :command WA wa
+" :command Wq wq
+" :command WQ wq
+" :command Wqa wqa
+" :command WQa wqa
+" :command WQA wqa
