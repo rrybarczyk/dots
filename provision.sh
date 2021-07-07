@@ -1,45 +1,32 @@
 #  Error if variable undefined, print each command
 # set -euf -o pipefile
 
-# Update installed packages
-sudo apt -y update
-sudo apt -y full-upgrade
+sudo apt install cmake pkg-config libssl-dev libglib2.0-dev gcc-multilib libmysqlclient-dev
 
-# Install packages if they do not already exist, default "y"
+# To get diesel_cli working for mysql
+sudo apt-get install libmysqlclient-dev libpq-dev libmariadbclient-dev-compat libsqlite3-dev
 
-# General Enviornment Dev Tools
-sudo apt install -y build-essential llvm libssl-dev pkg-config cmake python python3 python-pip3 ruby-full
-sudo apt install -y tmux git tree ngrep zlib1g bgpdump
-
-# Niceities
-sudo apt install -y lolcat 
-
-# Alsa Dev Package
-sudo apt-get install libasound2-dev
 
 # XCB Library for Interoperability with Xlib
 sudo apt install libxcb-shape0-dev libxcb-xfixes0-dev
 
-# Vulkan and PPA for Latest Drivers Install for AMD or Intel Graphics
-sudo add-apt-repository ppa:oibaf/graphics-drivers
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install libvulkan1 mesa-vulkan-drivers vulkan-utils
+# Bitcoin build
+sudo apt install autoconf libboost-all-dev libevent-dev
+sudo apt-get install libdb++-dev
 
-mv ~/.bashrc ~/.bashrc.bk
-mv ~/.profile ~/.profile.bk
-mv ~/.bash_profile ~/.bash_profile.bk
+# Install python
+sudo apt install software-properties-common
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+sudo apt install python3-pip
+sudo apt-get install python3-venv 
 
-# DotBot Setup
-git submodule update --init --recursive .
-./submodules/dotbot/bin/dotbot -c default.yaml
+# Install Jupyter Notebook
+pip3 install jupyter-console
 
-# Install Rust
-curl -sSf https://sh.rustup.rs | sh | sh -s -- -y
-source $HOME/.cargo/bin
-rustup install nightly
-rustup component add rustfmt
-rustup component add clippy
+# Install neovim
+sudo apt install libtool automake libncurses5-dev g++
+sudo apt install neovim
 
 # Install useful rustup tools and global crates
 rustup install nightly
@@ -58,6 +45,15 @@ rustup component add clippy
 # cargo-flamegraph  - generate flamegraphs and profiling data
 # cargo-outdated    - indicates when Rust dependencies are out of date
 # cargo-watch       - reload cargo commands on file save
-cargo install bat exa fd-find just qc ripgrep xsv cargo-check cargo-edit cargo-flamegraph cargo-outdated cargo-watch
+cargo install bat exa fd-find just qc ripgrep xsv cargo-check cargo-edit cargo-add cargo-flamegraph cargo-outdated cargo-watch diesel_cli
+
+# DotBot Setup
+git submodule update --init --recursive .
+./submodules/dotbot/bin/dotbot -c default.yaml
+
+# Force symlink bash scripts
+# ln -sf ~/.dots/etc/bashrc ~/.bashrc
+# ln -sf ~/.dots/etc/bash_profile ~/.bash_profile
+# ln -sf ~/.dots/etc/profile ~/.profile
 source ~/.bashrc
 

@@ -130,3 +130,5 @@ alias bat='bat --theme=GitHub --color=always'
 alias cargogen="cargo generate --git https://github.com/rrybarczyk/template-rs.git"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+alias pbcopy="xclip -sel clip"

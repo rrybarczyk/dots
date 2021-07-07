@@ -25,5 +25,5 @@
         ~/.profile:                             etc/profile
         ~/.tmux.conf:                           etc/tmux.conf
         ~/.vim/autoload/plug.vim:               submodules/vim-plug/plug.vim
-        ~/.vim/colors/codedark:                 etc/vim-colors/codedark.vim
+        ~/.vim/colors/codedark.vim:             etc/vim-colors/codedark.vim
         ~/.vimrc:                               etc/vimrc
