@@ -252,6 +252,10 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit'
   \}
 
+" Uses silversearcher-ag to ignore searching files in .gitignore and
+" node_modules
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+
 "------------------------------------------------------------------
 "---------------------------- NERDCommenter -----------------------
 " automatically close nerd tree when you open a file
@@ -335,10 +339,18 @@ let g:lightline = {
   \     }
   \ }
 
-" Uses silversearcher-ag to ignore searching files in .gitignore and
-" node_modules
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+"-----------------------------------------------------------------------------
+"---------------------------- Goyo & Limelight -------------------------------
+nnoremap <Leader>gy :Goyo<CR>
+" Only use Limelight when using Goyo
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
+
+
+
+"-----------------------------------------------------------------------------
+"-----------------------------------------------------------------------------
 "put cursor on file upon startup
 autocmd VimEnter * wincmd p
 " mapping for moving files
