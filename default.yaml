@@ -29,3 +29,4 @@
         ~/.vim/colors/codedark.vim:             etc/vim-colors/codedark.vim
         ~/.vimrc:                               etc/vimrc
         ~/.config/nvim/init.vim:                etc/nvim/init.vim
+        ~/.zshrc:                               etc/zshrc
