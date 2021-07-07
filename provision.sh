@@ -28,10 +28,18 @@ pip3 install jupyter-console
 sudo apt install libtool automake libncurses5-dev g++
 sudo apt install neovim
 
+# nvim-lspconfig dependency
+sudo npm i -g pyright
+
+# Better search to supplement fzf vim plugin
+sudo apt install silversearcher-ag
+
+
 # Install useful rustup tools and global crates
 rustup install nightly
 rustup component add rustfmt
 rustup component add clippy
+rustup component add rust-src
 
 # bat               - a colorful cat
 # exa               - a colorful ls
@@ -46,6 +54,11 @@ rustup component add clippy
 # cargo-outdated    - indicates when Rust dependencies are out of date
 # cargo-watch       - reload cargo commands on file save
 cargo install bat exa fd-find just qc ripgrep xsv cargo-check cargo-edit cargo-add cargo-flamegraph cargo-outdated cargo-watch diesel_cli
+
+# Install rust-analyzer for neovim rust LSP support
+# https://rust-analyzer.github.io/manual.html#rust-analyzer-language-server-binary
+curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.local/bin/rust-analyzer
+chmod +x ~/.local/bin/rust-analyzer
 
 # DotBot Setup
 git submodule update --init --recursive .
