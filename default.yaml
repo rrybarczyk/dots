@@ -33,6 +33,7 @@
         ~/.tmux.conf:                           etc/tmux.conf
         ~/.vim/autoload/plug.vim:               submodules/vim-plug/plug.vim
         ~/.vim/colors/codedark.vim:             etc/vim-colors/codedark.vim
+        ~/.vim/colors/jay.vim:                  etc/vim-colors/jay.vim
         ~/.vim/colors/Dark2.vim:                etc/vim-colors/Dark2.vim
         ~/.vim/colors/molokai.vim:              etc/vim-colors/molokai.vim
         ~/.vimrc:                               etc/vimrc
