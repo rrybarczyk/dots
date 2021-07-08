@@ -127,12 +127,13 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-###
-export EDITOR=vim
-# alias vim="nvim"
-# alias oldvim="\vim"
-set -o vi
+### VIM/NVIM
+set -o vi # Prompt uses vi commands
+export EDITOR=vim 
+alias vim="nvim"
+alias oldvim="\vim"
 
+### Aliases
 alias ll="ls -la"
 alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"

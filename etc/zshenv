@@ -6,6 +6,11 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+
+#export XDG_CONFIG_HOME=$HOME
+#export XDG_CONFIG_DIRS="/etc/xdg"
+
 export DOTS="$HOME/.dots"
+
 
 source ~/.config/.secrets

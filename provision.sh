@@ -12,7 +12,7 @@ cd ~/aur/yay && makepkg -sic
 cd ~
 
 # Install packages if they do not already exist, default "y"
-yay -S --noconfirm --needed tmux git dhcpcd networkmanager openssl ufw pkg-config base-devel intelucode openssh mkpkg clang
+yay -S --noconfirm --needed neovim tmux git dhcpcd networkmanager openssl ufw pkg-config base-devel intelucode openssh mkpkg clang
 
 # X and  i3 Windows Manager Enviornment
 yay -S --noconfirm --needed xorg-server xorg-xinit dmenu i3status i3-gaps slock xclip xorg-xeyes
@@ -23,6 +23,12 @@ yay -S --noconfirm --needed dbus bluez bluez-utils pulseaudio-bluetooth alsa-plu
 
 # zsh Support
 yay -S --noconfirm --needed zsh oh-my-zsh-git
+
+# Language Sever Protocols
+yay -S --noconfirm --needed rust-analyzer
+
+# For Neovim Fuzzy Search
+yay -S --noconfirm --needed the_silver_searcher
 
 # Monitoring
 yay -S --noconfirm --needed intel-gpu-tools htop
@@ -73,6 +79,11 @@ yay -S --needed --noconfirm spotify
 
 # Fonts 
 yay -S --needed --noconfirm adobe-source-han-sans-jp-fonts
+
+# Install vim-plug for neovim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
 
 
 yay -Syu
