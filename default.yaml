@@ -31,6 +31,7 @@
         ~/.profile:                             etc/profile
         ~/.secrets:                             etc/secrets
         ~/.ssh/config:                          etc/ssh-config
+        ~/.secrets:                             etc/secrets
         ~/.tmux.conf:                           etc/tmux.conf
         ~/.vim/autoload/plug.vim:               submodules/vim-plug/plug.vim
         ~/.vim/colors/codedark.vim:             etc/vim-colors/codedark.vim
