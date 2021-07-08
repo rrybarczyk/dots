@@ -61,6 +61,9 @@ Plug 'alvan/vim-closetag'
 " C++ syntax highlighting
 Plug 'octol/vim-cpp-enhanced-highlight'
 
+" Solidity Syntax
+Plug 'tomlion/vim-solidity'
+
 call plug#end()
 
 "------------------------------------------------------------------
@@ -78,7 +81,14 @@ syntax on								   "Turns on syntax
 " colo Dark2
 colo codedark
 
-set background=dark
+" Plug 'josuegaleas/jay'
+" set background=light
+" colorscheme jay
+" let g:lightline = {'colorscheme': 'jay'}
+
+
+
+" set background=dark
 set shiftwidth=2
 set softtabstop=2                   "Indent by 2 spaces when pressing <TA>
 set autoindent                      "Keep indentation from previous line
