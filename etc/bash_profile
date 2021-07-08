@@ -34,3 +34,5 @@ export CLOUDSDK_GSUTIL_PYTHON=python3
 export CLOUDSDK_BQ_PYTHON=python3
 
 export GOOGLE_APPLICATION_CREDENTIALS="$HOME/Programs/google-cloud-sdk/project-20200309-0-2169f5f2e217.json"
+
+source ~/.secrets

@@ -34,3 +34,6 @@ if [ -f '/home/rj/Programs/google-cloud-sdk/path.bash.inc' ]; then . '/home/rj/P
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/rj/Programs/google-cloud-sdk/completion.bash.inc' ]; then . '/home/rj/Programs/google-cloud-sdk/completion.bash.inc'; fi
+
+# Created by `pipx` on 2021-06-12 15:11:57
+export PATH="$PATH:/home/rj/.local/bin"

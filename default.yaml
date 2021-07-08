@@ -14,9 +14,7 @@
         - mkdir -p ~/.cargo
         - mkdir -p ~/.config
         - mkdir -p ~/.config/alacritty
-        - mkdir -p ~/.config/sway
-        - mkdir -p ~/.config/swaylock
-        - mkdir -p ~/.config/swaynag
+        - mkdir -p ~/.config/i3config
         - mkdir -p ~/.gnupg
         - mkdir -p ~/.local/share/lpass
         - mkdir -p ~/.ssh
@@ -29,12 +27,16 @@
         ~/.bashrc:                              etc/bashrc
         ~/.config/alacritty/alacritty.yml:      etc/alacritty.yml
         ~/.config/git/config:                   etc/gitconfig
-        ~/.config/sway/config:                  etc/sway.config
-        ~/.config/swaylock/config:              etc/swaylock.config
-        ~/.config/swaynag/config:               etc/swaynag.config
+        ~/.config/i3/config:                    etc/i3config
         ~/.profile:                             etc/profile
         ~/.ssh/config:                          etc/ssh-config
+        ~/.secrets:                             etc/secrets
         ~/.tmux.conf:                           etc/tmux.conf
         ~/.vim/autoload/plug.vim:               submodules/vim-plug/plug.vim
+        ~/.vim/colors/codedark.vim:             etc/vim-colors/codedark.vim
+        ~/.vim/colors/jay.vim:                  etc/vim-colors/jay.vim
+        ~/.vim/colors/Dark2.vim:                etc/vim-colors/Dark2.vim
+        ~/.vim/colors/molokai.vim:              etc/vim-colors/molokai.vim
         ~/.vimrc:                               etc/vimrc
+        ~/.xinitrc:                             etc/xinitrc
         ~/.xresources:                          etc/xresources
