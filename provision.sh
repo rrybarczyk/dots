@@ -21,6 +21,9 @@ yay -S --noconfirm --needed xorg-server xorg-xinit dmenu i3status i3-gaps slock 
 yay -S --noconfirm --needed unzip clang feh firefox okular alacritty lolcat alsa-utils lastpass-cli watchexec wget socat netcat unzip ngrep tree inkscape
 yay -S --noconfirm --needed dbus bluez bluez-utils pulseaudio-bluetooth alsa-plugins pulseaudio pulseaudio-alsa ponymix
 
+# zsh Support
+yay -S --noconfirm --needed zsh oh-my-zsh-git
+
 # Monitoring
 yay -S --noconfirm --needed intel-gpu-tools htop
 

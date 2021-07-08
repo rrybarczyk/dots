@@ -1,0 +1,11 @@
+# typeset -U PATH path
+# path=("$HOME/.local/bin" /other/things/in/path "$path[@]")
+# export PATH
+
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export DOTS="$HOME/.dots"
+
+source ~/.config/.secrets

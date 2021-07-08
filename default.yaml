@@ -23,13 +23,11 @@
 - link:
         ~/app: app
 
-        ~/.bash_profile:                        etc/bash_profile
         ~/.bashrc:                              etc/bashrc
         ~/.config/alacritty/alacritty.yml:      etc/alacritty.yml
         ~/.config/git/config:                   etc/gitconfig
         ~/.config/i3/config:                    etc/i3config
-        ~/.profile:                             etc/profile
-        ~/.secrets:                             etc/secrets
+        ~/.config/.secrets:                     etc/secrets
         ~/.ssh/config:                          etc/ssh-config
         ~/.secrets:                             etc/secrets
         ~/.tmux.conf:                           etc/tmux.conf
@@ -41,3 +39,5 @@
         ~/.vimrc:                               etc/vimrc
         ~/.xinitrc:                             etc/xinitrc
         ~/.xresources:                          etc/xresources
+        ~/.zshrc:                               etc/zshrc
+        ~/.zshenv:                              etc/zshenv
