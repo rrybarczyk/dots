@@ -127,6 +127,9 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
+# Fuzzy finder
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 ### VIM/NVIM
 set -o vi # Prompt uses vi commands
 export EDITOR=vim 
@@ -137,3 +140,8 @@ alias oldvim="\vim"
 alias ll="ls -la"
 alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
+
+export TERM=xterm-256color
+
+
+cd ~/
