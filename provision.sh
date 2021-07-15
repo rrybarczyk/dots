@@ -25,6 +25,9 @@ sudo apt-get install neovim
 # Better search to supplement fzf vim plugin
 sudo apt install silversearcher-ag
 
+# Python linting
+sudo apt install flake8
+
 # Install vim-plug package manager
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
 	       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
