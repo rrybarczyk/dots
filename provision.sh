@@ -1,39 +1,39 @@
 #  Error if variable undefined, print each command
 # set -euf -o pipefile
 
-sudo apt install cmake pkg-config libssl-dev libglib2.0-dev gcc-multilib libmysqlclient-dev
-
-# To get diesel_cli working for mysql
-sudo apt-get install libmysqlclient-dev libpq-dev libmariadbclient-dev-compat libsqlite3-dev
-
-
-# XCB Library for Interoperability with Xlib
-sudo apt install libxcb-shape0-dev libxcb-xfixes0-dev
-
-# Bitcoin build
-sudo apt install autoconf libboost-all-dev libevent-dev
-sudo apt-get install libdb++-dev
-
-# Install python
-sudo apt install software-properties-common
-sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
-sudo apt install python3-pip
-sudo apt-get install python3-venv 
 
-# Install Jupyter Notebook
-pip3 install jupyter-console
+# Setup dotbot and link files
+git submodule update --init --recursive .
+SHELL=sh ./submodules/dotbot/bin/dotbot -c default.yaml
 
-# Install neovim
+
+# Install shell to zsh
+sudo apt install zsh
+
+# Install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sudo apt install cmake pkg-config libssl-dev
+
+# Install latest neovim
 sudo apt install libtool automake libncurses5-dev g++
-sudo apt install neovim
+sudo add-apt-repository ppa:neovim-ppa/stable
+sudo apt-get update
+sudo apt-get install neovim
 
-# nvim-lspconfig dependency
-sudo npm i -g pyright
 
 # Better search to supplement fzf vim plugin
 sudo apt install silversearcher-ag
 
+# Install vim-plug package manager
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+	       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+
+# Install rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+source ~/.zshrc
 
 # Install useful rustup tools and global crates
 rustup install nightly
@@ -41,19 +41,13 @@ rustup component add rustfmt
 rustup component add clippy
 rustup component add rust-src
 
-# bat               - a colorful cat
-# exa               - a colorful ls
 # fd-find           - a better find
 # just              - a better make <3
 # qc                - an advanced RPN cli calculator
 # ripgrep           - a better grep
-# xsv               - fast csv cli toolkit
 # cargo-check       - checks for rust code errors
-# cargo-edit        - add, remove, upgrade dependencies from cli
-# cargo-flamegraph  - generate flamegraphs and profiling data
-# cargo-outdated    - indicates when Rust dependencies are out of date
 # cargo-watch       - reload cargo commands on file save
-cargo install bat exa fd-find just qc ripgrep xsv cargo-check cargo-edit cargo-add cargo-flamegraph cargo-outdated cargo-watch diesel_cli
+cargo install fd-find just qc ripgrep cargo-check cargo-add cargo-watch
 
 # Install rust-analyzer for neovim rust LSP support
 # https://rust-analyzer.github.io/manual.html#rust-analyzer-language-server-binary
@@ -68,5 +62,6 @@ git submodule update --init --recursive .
 # ln -sf ~/.dots/etc/bashrc ~/.bashrc
 # ln -sf ~/.dots/etc/bash_profile ~/.bash_profile
 # ln -sf ~/.dots/etc/profile ~/.profile
-source ~/.bashrc
+source ~/.zshrc
+
 
