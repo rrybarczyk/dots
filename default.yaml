@@ -7,26 +7,15 @@
         - '~'
         - ~/.cargo
         - ~/.config
-        - ~/.ssh
 
 - shell:
         - mkdir -p ~/.cargo
         - mkdir -p ~/.config
         - mkdir -p ~/.config/nvim
-        - mkdir -p ~/.ssh
-        - mkdir -p ~/.vim/autoload
-        - mkdir -p ~/.vim/colors
 
 - link:
-        ~/app: app
 
-        ~/.bash_profile:                        etc/bash_profile
-        ~/.bashrc:                              etc/bashrc
         ~/.config/git/config:                   etc/gitconfig
-        ~/.profile:                             etc/profile
         ~/.tmux.conf:                           etc/tmux.conf
-        ~/.vim/autoload/plug.vim:               submodules/vim-plug/plug.vim
-        ~/.vim/colors/codedark.vim:             etc/vim-colors/codedark.vim
-        ~/.vimrc:                               etc/vimrc
         ~/.config/nvim/init.vim:                etc/nvim/init.vim
         ~/.zshrc:                               etc/zshrc
