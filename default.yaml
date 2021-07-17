@@ -19,11 +19,8 @@
         - mkdir -p ~/.vim/colors
 
 - link:
-        ~/.bash_profile:                        etc/bash_profile
-        ~/.bashrc:                              etc/bashrc
         ~/.config/alacritty/alacritty.yml:      etc/alacritty.yml
         ~/.config/git/config:                   etc/gitconfig
-        ~/.profile:                             etc/profile
         ~/.ssh/config:                          etc/ssh-config
         ~/.tmux.conf:                           etc/tmux.conf
         ~/.vim/autoload/plug.vim:               submodules/vim-plug/plug.vim
@@ -31,4 +28,4 @@
         ~/.vim/colors/Dark2.vim:                etc/vim-colors/Dark2.vim
         ~/.vim/colors/molokai.vim:              etc/vim-colors/molokai.vim
         ~/.vimrc:                               etc/vimrc
-        ~/vim:                                  etc/vim
+        ~/.zshrc:                               etc/zshrc

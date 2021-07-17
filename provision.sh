@@ -2,16 +2,16 @@
 # Exit script upon fail, error if variable undefined, print each command
 set -euxo pipefail
 
-## Change default shell from zsh to bash (change back with `$ chsh -s /bin/zsh`)
-## chsh -s /bin/bash
-#
 ## Install brew package manger
-#/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 #
-#brew install tmux wget imagemagick htop tree lolcat lastpass-cli watchexec gnu-time gnupg2 git-lfs tmux-mem-cpu-load
-#brew cask install mactex-no-gui
-#brew cask install ngrok
-#brew cask install wireshark
+brew install zsh tmux wget imagemagick htop tree lolcat lastpass-cli watchexec gnu-time gnupg2 git-lfs tmux-mem-cpu-load
+brew cask install mactex-no-gui
+brew cask install ngrok
+brew cask install wireshark
+
+# Install Oh My Zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Install Rust
 curl -sSf https://sh.rustup.rs | sh
