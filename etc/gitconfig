@@ -1,6 +1,8 @@
 [user]
-	email = rj@rybar.tech
-	name = RJ Rybarczyk
+	email = t420babe@gmail.com
+	name = t420babe
+	# email = rj@rybar.tech
+	# name = RJ Rybarczyk
 
 [core]
   editor = vim

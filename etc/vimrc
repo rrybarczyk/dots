@@ -67,6 +67,12 @@ Plug 'chrisbra/unicode.vim'
 
 " Plug 'patriciogonzalezvivo/vim-glslViewer'
 
+Plug 'tpope/vim-fugitive'
+
+Plug 'pangloss/vim-javascript'
+
+Plug 'othree/html5.vim'
+
 call plug#end()
 
 "------------------------------------------------------------------
@@ -104,6 +110,9 @@ set hlsearch					    "Highlight search terms
 set incsearch					    "Highlight search terms as you type
 set nobackup			            "Do not create backup files
 set spell spelllang=en_us           "Spell check
+" When searching, only be case sensitive if there's at least one uppercase
+" character in the search string.
+set ignorecase smartcase
 
 "Intuitive vim split jump commands
 nnoremap <C-j> <C-w><C-j>
