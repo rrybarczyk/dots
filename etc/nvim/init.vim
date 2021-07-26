@@ -241,8 +241,8 @@ let g:rustfmt_autosave=1            "Auto format with rustfmt on save
 "------------------------------------------------------------------
 "---------------------------- Fuzzy -------------------------------
 " Search files with FZF
-nnoremap <c-p> :Files<cr>
-nnoremap <C-p> :GFiles<CR>
+nnoremap <c-p> :GFiles<cr>
+nnoremap <C-p> :Files<CR>
 " ctrl-t -> open file in new tab
 " ctrl-s -> open file in new horizontal split
 " ctrl-v -> open file in new vertical split
