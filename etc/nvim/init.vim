@@ -168,7 +168,19 @@ local on_attach = function(client)
 end
 
 -- Enable rust_analyzer
-nvim_lsp.rust_analyzer.setup({ on_attach=on_attach })
+nvim_lsp.rust_analyzer.setup({
+  on_attach=on_attach,
+  settings = {
+    ["rust-analyzer"] = {
+      diagnostics = {
+        disabled = "inactive-code"
+        },
+      procMacro = {
+      enable = true
+      }
+    }
+  }
+})
 
 -- Enable diagnostics
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
@@ -254,7 +266,7 @@ let g:fzf_action = {
 
 " Uses silversearcher-ag to ignore searching files in .gitignore and
 " node_modules
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+let $FZF_DEFAULT_COMMAND = 'rg --files'
 
 "------------------------------------------------------------------
 "---------------------------- NERDCommenter -----------------------
