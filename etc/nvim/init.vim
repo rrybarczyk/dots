@@ -185,6 +185,19 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 )
 EOF
 
+"-----------------------------------------------------------------------------
+"---------------------------------- PYTHON ANALYZER LSP BEGIN ----------------
+lua << EOF
+require("lspconfig").pylsp.setup{}
+EOF
+
+set completeopt-=preview
+
+" use omni completion provided by lsp
+autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
+"---------------------------------- PYTHON LYZER LSP END ---------------------
+"-----------------------------------------------------------------------------
+
 "---------------------------------- RUST-ANALYZER LSP END --------------------
 "-----------------------------------------------------------------------------
 
