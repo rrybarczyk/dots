@@ -16,7 +16,6 @@
         - mkdir -p ~/.config/alacritty
         - mkdir -p ~/.config/i3config
         - mkdir -p ~/.gnupg
-        - mkdir -p ~/.local/share/lpass
         - mkdir -p ~/.ssh
 
 - link:
