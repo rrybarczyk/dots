@@ -95,8 +95,10 @@ Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 
 " nvim-telescope
+Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 call plug#end()
 
@@ -150,9 +152,10 @@ nnoremap <C-h> <C-w><C-h>
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 
-" Telescope
+""" Telescope
 " Find files using Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>ff <cmd>Telescope git_files<cr>
+nnoremap <leader>fd <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
@@ -167,51 +170,30 @@ nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 lua << EOF
 require('telescope').setup{
   defaults = {
-    vimgrep_arguments = {
-      'rg',
-      '-u',
-      '-u',
-      '--hidden',
-      '--color=never',
-      '--no-heading',
-      '--with-filename',
-      '--line-number',
-      '--column',
-      '--smart-case'
-    },
-    prompt_prefix = "> ",
-    selection_caret = "> ",
-    entry_prefix = "  ",
-    initial_mode = "insert",
-    selection_strategy = "reset",
-    sorting_strategy = "descending",
-    layout_strategy = "horizontal",
-    layout_config = {
-      horizontal = {
-        mirror = false,
-      },
-      vertical = {
-        mirror = false,
-      },
-    },
-    file_sorter =  require'telescope.sorters'.get_fuzzy_file,
-    file_ignore_patterns = {"./git"},
-    generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
-    winblend = 0,
-    border = {},
-    borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
+    file_sorter =  require'telescope.sorters'.get_fzy_sorter,
+    prompt_prefix = '> ',
     color_devicons = true,
-    use_less = true,
-    path_display = {},
-    set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
+
     file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
     grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
     qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
 
-    -- Developer configurations: Not meant for general override
-    buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
+    mappings = {
+      i = {
+        ["<C-x>"] = false,
+        ["<C-q>"] = require'telescope.actions'.send_to_qflist,
+        },
+      }
+
+  },
+  extensions = {
+    fzy_native = {
+      override_generic_sorter = false,
+      override_file_sorter = true,
+    }
   }
 }
+
 EOF
 
 
