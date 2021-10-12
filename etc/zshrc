@@ -42,3 +42,7 @@ alias oldvim="\vim"
 set -o vi
 
 alias ll="ls -la"
+alias gt="git log --graph --abbrev-commit --decorate --oneline"
+
+bindkey -v
+bindkey '^R' history-incremental-search-backward
