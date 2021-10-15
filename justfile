@@ -74,6 +74,9 @@ mpx-to-wav MPX:
 nmap-ip:
   sudo nmap -sP -PS22 192.168.1.0/24
 
+nmap-ip-6:
+  sudo nmap -sP -PS22 -6 fe80::579e:d306:ba6f:4df6
+
 figlet-clock:
   while true; do tput clear; date +"%H : %M : %S" | figlet ; sleep 1; done
 
@@ -82,3 +85,6 @@ termbin FILE:
 
 largest-files:
   sudo find / -xdev -type f -size +100M
+
+mitm:
+  ssh ubnt@192.168.1.1 'sudo tcpdump -f -i switch0 -w - not port 22' | wireshark -k -i -
