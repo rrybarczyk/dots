@@ -26,6 +26,7 @@ yay -S --noconfirm --needed zsh oh-my-zsh-git
 
 # Language Sever Protocols
 yay -S --noconfirm --needed rust-analyzer
+yay -S --noconfirm --needed deno
 
 # For Neovim Fuzzy Search
 yay -S --noconfirm --needed the_silver_searcher

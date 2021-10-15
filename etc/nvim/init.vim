@@ -14,86 +14,37 @@ set rtp+=~/.fzf
 "https://github.com/junegunn/vim-plug
 " call plug#begin('~/.vim/plugged')
 call plug#begin('~/.config/nvim/plugged')
-
-" Collection of common configurations for the Nvim LSP client
 Plug 'neovim/nvim-lspconfig'
-
-" Extensions to built-in LSP, for example, providing type inlay hints
 Plug 'nvim-lua/lsp_extensions.nvim'
-
-" Autocompletion framework for built-in LSP
 Plug 'nvim-lua/completion-nvim'
-
-" Tmux Navigator
 Plug 'christoomey/vim-tmux-navigator'
-
-" NERDTree
-" Plug 'scrooloose/nerdtree'
 Plug 'preservim/nerdtree',     {'on': 'NERDTreeToggle'} " nerd tree file drawer
-
-" NERDCommenter
 Plug 'preservim/nerdcommenter'
-
-" Adds syntax for nerdtree on most common file extensions
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
 Plug 'Xuyuanp/nerdtree-git-plugin'
-
 Plug 'ryanoasis/vim-devicons'
-
-" Rust Synatx
 Plug 'rust-lang/rust.vim'
-
-" TOML Syntax
 Plug 'cespare/vim-toml'
-
-" C++ Syntax
 Plug 'octol/vim-cpp-enhanced-highlight'
-
-" Markdown Syntax
 Plug 'tpope/vim-markdown'
-
-" ARMv6/7 Assembly Syntax
 Plug 'ARM9/arm-syntax-vim'
 au BufNewFile,BufRead *.s,*.S set filetype=arm
-
-" OpenCL (Open Computing Language) Syntax
 Plug 'petRUShka/vim-opencl'
-
-" Python Flake8 Linter
 Plug 'nvie/vim-flake8'
-
-" Matlab Syntax
 Plug 'lazywei/vim-matlab'
-
-" LaTeX Syntax
 Plug 'lervag/vimtex'
-
-" Haskell Syntax
 Plug 'neovimhaskell/haskell-vim'
-
-" Fuzzy searching using fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-
-" A very fast, multi-syntax context-sensitive color name highlighter
 Plug 'ap/vim-css-color'
-
-" Highlight sass colors and color variables
 Plug 'cakebaker/scss-syntax.vim'
-
 Plug 'alvan/vim-closetag'
-
-" C++ syntax highlighting
 Plug 'octol/vim-cpp-enhanced-highlight'
-
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
-
 Plug 'morhetz/gruvbox'
-
 Plug 'itchyny/lightline.vim'
-
+Plug 'tomlion/vim-solidity'
 call plug#end()
 
 "------------------------------------------------------------------
@@ -185,6 +136,9 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 )
 EOF
 
+"---------------------------------- RUST-ANALYZER LSP END --------------------
+"-----------------------------------------------------------------------------
+
 "-----------------------------------------------------------------------------
 "---------------------------------- PYTHON ANALYZER LSP BEGIN ----------------
 lua << EOF
@@ -198,9 +152,12 @@ autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
 "---------------------------------- PYTHON LYZER LSP END ---------------------
 "-----------------------------------------------------------------------------
 
+" nvim_lsp.rust_analyzer.setup({ on_attach=on_attach })
+lua require'lspconfig'.denols.setup{}
+
+
 "---------------------------------- RUST-ANALYZER LSP END --------------------
 "-----------------------------------------------------------------------------
-
 
 "-----------------------------------------------------------------------------
 "---------------------------------- LSP BEGIN --------------------------------
