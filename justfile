@@ -88,3 +88,6 @@ largest-files:
 
 mitm:
   ssh ubnt@192.168.1.1 'sudo tcpdump -f -i switch0 -w - not port 22' | wireshark -k -i -
+
+sound PERCENT:
+  amixer set Master {{PERCENT}}%
