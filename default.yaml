@@ -28,6 +28,7 @@
         ~/.ssh/config:                          etc/ssh-config
         ~/.secrets:                             etc/secrets
         ~/.config/nvim/init.vim:                etc/nvim/init.vim
+        ~/.config/pycodestyle:                  etc/pycodestyle
         ~/.tmux.conf:                           etc/tmux.conf
         ~/.xinitrc:                             etc/xinitrc
         ~/.xresources:                          etc/xresources

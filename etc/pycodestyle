@@ -1,0 +1,3 @@
+# To keep python LSP from complaining in nvim when lines are more than 78 chars
+[pycodestyle]
+max-line-length=100
