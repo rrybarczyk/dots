@@ -10,6 +10,7 @@ set rtp+=~/.fzf
 " call plug#begin('~/.vim/plugged')
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'tomlion/vim-solidity'
 " Collection of common configurations for the Nvim LSP client
 Plug 'neovim/nvim-lspconfig'
 
@@ -88,6 +89,8 @@ Plug 'junegunn/goyo.vim'
 Plug 'morhetz/gruvbox'
 
 Plug 'itchyny/lightline.vim'
+
+Plug 'dhruvasagar/vim-zoom'
 
 call plug#end()
 
@@ -195,6 +198,13 @@ EOF
 "---------------------------------- RUST-ANALYZER LSP END --------------------
 "-----------------------------------------------------------------------------
 
+"-----------------------------------------------------------------------------
+"---------------------------------- PYRIGHT LSP BEGIN ------------------------
+lua << EOF
+require'lspconfig'.pyright.setup{}
+EOF
+"---------------------------------- PYRIGHT LSP END --------------------------
+"-----------------------------------------------------------------------------
 
 "-----------------------------------------------------------------------------
 "---------------------------------- LSP BEGIN --------------------------------
