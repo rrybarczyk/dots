@@ -91,3 +91,6 @@ mitm:
 
 sound PERCENT:
   amixer set Master {{PERCENT}}%
+
+yayrm PACKAGE:
+  sudo pacman -Rcns {{PACKAGE}}
