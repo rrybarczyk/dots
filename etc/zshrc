@@ -143,3 +143,5 @@ alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
 
 export TERM=xterm-256color
+
+PATH="/home/rj/.local/share/solana/install/active_release/bin:$PATH"
