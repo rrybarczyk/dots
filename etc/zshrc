@@ -133,7 +133,8 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 ### VIM/NVIM
 set -o vi # Prompt uses vi commands
 export EDITOR=vim 
-alias vim="nvim"
+alias vim="TERM='' nvim"
+alias nvim="TERM='' nvim"
 alias oldvim="\vim"
 
 ### Aliases

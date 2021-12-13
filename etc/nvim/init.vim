@@ -3,48 +3,126 @@
 " let &packpath = &runtimepath
 " source ~/.vimrc
 
-" https://otavio.dev/2018/09/30/migrating-from-vim-to-neovim
-" set runtimepath^=~/.vim runtimepath+=~/.vim/after
-" let &packpath = &runtimepath
-" source ~/.vimrc
-
 set rtp+=~/.fzf
 "------------------------------------------------------------------
 "---------------------------- Plug --------------------------------
 "https://github.com/junegunn/vim-plug
 " call plug#begin('~/.vim/plugged')
 call plug#begin('~/.config/nvim/plugged')
+
+" Collection of common configurations for the Nvim LSP client
 Plug 'neovim/nvim-lspconfig'
+
+" Completion framework
+Plug 'hrsh7th/nvim-cmp'
+
+" LSP completion source for nvim-cmp
+Plug 'hrsh7th/cmp-nvim-lsp'
+
+" Snippet completion source for nvim-cmp
+Plug 'hrsh7th/cmp-vsnip'
+
+" Other usefull completion sources
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-buffer'
+
+" See hrsh7th's other plugins for more completion sources!
+
+" To enable more of the features of rust-analyzer, such as inlay hints and more!
+Plug 'simrat39/rust-tools.nvim'
+
+" Snippet engine
+Plug 'hrsh7th/vim-vsnip'
+
+" Fuzzy finder
+" Optional
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
+" Color scheme used in the GIFs!
+" Plug 'arcticicestudio/nord-vim'
+
+Plug 'tomlion/vim-solidity'
+
+" Extensions to built-in LSP, for example, providing type inlay hints
 Plug 'nvim-lua/lsp_extensions.nvim'
-Plug 'nvim-lua/completion-nvim'
+
+" " Autocompletion framework for built-in LSP
+" Plug 'nvim-lua/completion-nvim'
+
+" Tmux Navigator
 Plug 'christoomey/vim-tmux-navigator'
+
+" NERDTree
+" Plug 'scrooloose/nerdtree'
 Plug 'preservim/nerdtree',     {'on': 'NERDTreeToggle'} " nerd tree file drawer
+
+" NERDCommenter
 Plug 'preservim/nerdcommenter'
+
+" Adds syntax for nerdtree on most common file extensions
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
 Plug 'Xuyuanp/nerdtree-git-plugin'
+
 Plug 'ryanoasis/vim-devicons'
+
+" Rust Synatx
 Plug 'rust-lang/rust.vim'
+
+" TOML Syntax
 Plug 'cespare/vim-toml'
+
+" C++ Syntax
 Plug 'octol/vim-cpp-enhanced-highlight'
+
+" Markdown Syntax
 Plug 'tpope/vim-markdown'
+
+" ARMv6/7 Assembly Syntax
 Plug 'ARM9/arm-syntax-vim'
 au BufNewFile,BufRead *.s,*.S set filetype=arm
+
+" OpenCL (Open Computing Language) Syntax
 Plug 'petRUShka/vim-opencl'
+
+" Python Flake8 Linter
 Plug 'nvie/vim-flake8'
+
+" Matlab Syntax
 Plug 'lazywei/vim-matlab'
+
+" LaTeX Syntax
 Plug 'lervag/vimtex'
+
+" Haskell Syntax
 Plug 'neovimhaskell/haskell-vim'
+
+" Fuzzy searching using fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+
+" A very fast, multi-syntax context-sensitive color name highlighter
 Plug 'ap/vim-css-color'
+
+" Highlight sass colors and color variables
 Plug 'cakebaker/scss-syntax.vim'
+
 Plug 'alvan/vim-closetag'
+
+" C++ syntax highlighting
 Plug 'octol/vim-cpp-enhanced-highlight'
+
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
+
 Plug 'morhetz/gruvbox'
+
 Plug 'itchyny/lightline.vim'
-Plug 'tomlion/vim-solidity'
+
+Plug 'dhruvasagar/vim-zoom'
+
 call plug#end()
 
 "------------------------------------------------------------------
@@ -78,7 +156,7 @@ set softtabstop=2                   "Indent by 2 spaces when pressing <TA>
 set autoindent                      "Keep indentation from previous line
 set smartindent                     "Automatically inserts indentation in some cases
 set cindent                         "Like smartindent, but stricter and more customizable
-set tabstop=2                       "Sets tab to be 2 spaces
+set tabstop=2                      "Sets tab to be 2 spaces
 set expandtab
 set nowrap                          "Do not visually wrap long lines
 set smartcase					    "Search case-insensitive if everything is lower case
@@ -111,52 +189,92 @@ set completeopt=menuone,noinsert,noselect
 " Avoid showing extra messages when using completion
 set shortmess+=c
 
-" Configure LSP
-" https://github.com/neovim/nvim-lspconfig#rust_analyzer
+" Configure LSP through rust-tools.nvim plugin.
+" rust-tools will configure and enable certain LSP features for us.
+" See https://github.com/simrat39/rust-tools.nvim#configuration
 lua <<EOF
-
--- nvim_lsp object
 local nvim_lsp = require'lspconfig'
 
--- function to attach completion when setting up lsp
-local on_attach = function(client)
-    require'completion'.on_attach(client)
-end
+local opts = {
+    tools = { -- rust-tools options
+        autoSetHints = true,
+        hover_with_actions = true,
+        inlay_hints = {
+            show_parameter_hints = false,
+            parameter_hints_prefix = "",
+            other_hints_prefix = "",
+        },
+    },
 
--- Enable rust_analyzer
-nvim_lsp.rust_analyzer.setup({ on_attach=on_attach })
+    -- all the opts to send to nvim-lspconfig
+    -- these override the defaults set by rust-tools.nvim
+    -- see https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#rust_analyzer
+    server = {
+        -- on_attach is a callback called when the language server attachs to the buffer
+        -- on_attach = on_attach,
+        settings = {
+            -- to enable rust-analyzer settings visit:
+            -- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
+            ["rust-analyzer"] = {
+                -- enable clippy on save
+                checkOnSave = {
+                    command = "clippy"
+                },
+            }
+        }
+    },
+}
 
--- Enable diagnostics
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
-    virtual_text = true,
-    signs = true,
-    update_in_insert = true,
-  }
-)
+require('rust-tools').setup(opts)
 EOF
+
+" Setup Completion
+" See https://github.com/hrsh7th/nvim-cmp#basic-configuration
+lua <<EOF
+local cmp = require'cmp'
+cmp.setup({
+  -- Enable LSP snippets
+  snippet = {
+    expand = function(args)
+        vim.fn["vsnip#anonymous"](args.body)
+    end,
+  },
+  mapping = {
+    ['<C-p>'] = cmp.mapping.select_prev_item(),
+    ['<C-n>'] = cmp.mapping.select_next_item(),
+    -- Add tab support
+    ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+    ['<Tab>'] = cmp.mapping.select_next_item(),
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.close(),
+    ['<CR>'] = cmp.mapping.confirm({
+      behavior = cmp.ConfirmBehavior.Insert,
+      select = true,
+    })
+  },
+
+  -- Installed sources
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'vsnip' },
+    { name = 'path' },
+    { name = 'buffer' },
+  },
+})
+EOF
+
 
 "---------------------------------- RUST-ANALYZER LSP END --------------------
 "-----------------------------------------------------------------------------
 
 "-----------------------------------------------------------------------------
-"---------------------------------- PYTHON ANALYZER LSP BEGIN ----------------
+"---------------------------------- PYRIGHT LSP BEGIN ------------------------
 lua << EOF
-require("lspconfig").pylsp.setup{}
+require'lspconfig'.pyright.setup{}
 EOF
-
-set completeopt-=preview
-
-" use omni completion provided by lsp
-autocmd Filetype python setlocal omnifunc=v:lua.vim.lsp.omnifunc
-"---------------------------------- PYTHON LYZER LSP END ---------------------
-"-----------------------------------------------------------------------------
-
-" nvim_lsp.rust_analyzer.setup({ on_attach=on_attach })
-lua require'lspconfig'.denols.setup{}
-
-
-"---------------------------------- RUST-ANALYZER LSP END --------------------
+"---------------------------------- PYRIGHT LSP END --------------------------
 "-----------------------------------------------------------------------------
 
 "-----------------------------------------------------------------------------
@@ -216,8 +334,8 @@ let g:rustfmt_autosave=1            "Auto format with rustfmt on save
 "------------------------------------------------------------------
 "---------------------------- Fuzzy -------------------------------
 " Search files with FZF
-nnoremap <c-p> :Files<cr>
-nnoremap <C-p> :GFiles<CR>
+nnoremap <c-p> :GFiles<cr>
+nnoremap <C-p> :Files<CR>
 " ctrl-t -> open file in new tab
 " ctrl-s -> open file in new horizontal split
 " ctrl-v -> open file in new vertical split
@@ -229,7 +347,7 @@ let g:fzf_action = {
 
 " Uses silversearcher-ag to ignore searching files in .gitignore and
 " node_modules
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+let $FZF_DEFAULT_COMMAND = 'rg --files'
 
 "------------------------------------------------------------------
 "---------------------------- NERDCommenter -----------------------
