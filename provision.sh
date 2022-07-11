@@ -1,6 +1,9 @@
 #  Error if variable undefined, print each command
 # set -euf -o pipefile
 
+sudo apt install zsh
+chsh -s /usr/bin/zsh
+
 sudo apt install cmake pkg-config libssl-dev libglib2.0-dev gcc-multilib libmysqlclient-dev
 
 # To get diesel_cli working for mysql
@@ -68,5 +71,5 @@ git submodule update --init --recursive .
 # ln -sf ~/.dots/etc/bashrc ~/.bashrc
 # ln -sf ~/.dots/etc/bash_profile ~/.bash_profile
 # ln -sf ~/.dots/etc/profile ~/.profile
-source ~/.bashrc
+source ~/.zshrc
 
