@@ -12,7 +12,6 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Collection of common configurations for the Nvim LSP client
 Plug 'neovim/nvim-lspconfig'
-
 " Completion framework
 Plug 'hrsh7th/nvim-cmp'
 
@@ -43,7 +42,12 @@ Plug 'nvim-telescope/telescope.nvim'
 " Color scheme used in the GIFs!
 " Plug 'arcticicestudio/nord-vim'
 
-Plug 'tomlion/vim-solidity'
+" Plug 'tomlion/vim-solidity'
+Plug 'TovarishFin/vim-solidity'
+" post install (yarn install | npm install) then load plugin only for editing supported files
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install && yarn add prettier-plugin-solidity',
+  \ 'for': ['solidity'] }
 
 " Extensions to built-in LSP, for example, providing type inlay hints
 Plug 'nvim-lua/lsp_extensions.nvim'
@@ -123,6 +127,7 @@ Plug 'itchyny/lightline.vim'
 
 Plug 'dhruvasagar/vim-zoom'
 
+Plug 'tikhomirov/vim-glsl'
 call plug#end()
 
 "------------------------------------------------------------------
@@ -156,7 +161,7 @@ set softtabstop=2                   "Indent by 2 spaces when pressing <TA>
 set autoindent                      "Keep indentation from previous line
 set smartindent                     "Automatically inserts indentation in some cases
 set cindent                         "Like smartindent, but stricter and more customizable
-set tabstop=2                       "Sets tab to be 2 spaces
+set tabstop=2                      "Sets tab to be 2 spaces
 set expandtab
 set nowrap                          "Do not visually wrap long lines
 set smartcase					    "Search case-insensitive if everything is lower case
@@ -164,6 +169,7 @@ set hlsearch					    "Highlight search terms
 set incsearch					    "Highlight search terms as you type
 set nobackup			            "Do not create backup files
 set spell spelllang=en_us           "Spell check
+set colorcolumn=100
 
 "Intuitive vim split jump commands
 nnoremap <C-j> <C-w><C-j>
@@ -285,7 +291,7 @@ inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " use <Tab> as trigger keys
-imap <Tab> <Plug>(completion_smart_tab)
+" imap <Tab> <Plug>(completion_smart_tab)
 imap <S-Tab> <Plug>(completion_smart_s_tab)
 
 " Code navigation shortcuts
