@@ -10,6 +10,7 @@
         - ~/.ssh
 
 - shell:
+        - mkdir -p ~/app
         - mkdir -p ~/.cargo
         - mkdir -p ~/.config
         - mkdir -p ~/.config/nvim
@@ -19,7 +20,6 @@
 
 - link:
         ~/app: app
-
         ~/.bash_profile:                        etc/bash_profile
         ~/.bashrc:                              etc/bashrc
         ~/.config/git/config:                   etc/gitconfig
