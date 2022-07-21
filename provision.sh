@@ -31,12 +31,12 @@ sudo apt install neovim
 # nvim-lspconfig dependency
 sudo npm i -g pyright
 
-sudo apt install tldr -y
+# Niceities
+sudo apt install tldr wget -y
 
 sudo apt install fzf
 # Better search to supplement fzf vim plugin
 sudo apt install silversearcher-ag
-
 
 # Install Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -79,4 +79,3 @@ git submodule update --init --recursive .
 # ln -sf ~/.dots/etc/bash_profile ~/.bash_profile
 # ln -sf ~/.dots/etc/profile ~/.profile
 source ~/.zshrc
-
