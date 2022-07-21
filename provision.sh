@@ -24,15 +24,14 @@ sudo apt update
 sudo apt install python3-pip
 sudo apt-get install python3-venv 
 
-# Install Jupyter Notebook
-pip3 install jupyter-console
-
 # Install neovim
 sudo apt install libtool automake libncurses5-dev g++
 sudo apt install neovim
 
 # nvim-lspconfig dependency
 sudo npm i -g pyright
+
+sudo apt install tldr -y
 
 sudo apt install fzf
 # Better search to supplement fzf vim plugin
