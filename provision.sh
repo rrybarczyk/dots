@@ -34,9 +34,13 @@ sudo apt install neovim
 # nvim-lspconfig dependency
 sudo npm i -g pyright
 
+sudo apt install fzf
 # Better search to supplement fzf vim plugin
 sudo apt install silversearcher-ag
 
+
+# Install Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # Install useful rustup tools and global crates
 rustup install nightly
@@ -62,6 +66,10 @@ cargo install bat exa fd-find just qc ripgrep xsv cargo-check cargo-edit cargo-a
 # https://rust-analyzer.github.io/manual.html#rust-analyzer-language-server-binary
 curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.local/bin/rust-analyzer
 chmod +x ~/.local/bin/rust-analyzer
+
+# Install Plug for neovim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # DotBot Setup
 git submodule update --init --recursive .
