@@ -3,3 +3,4 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export DOTS="$HOME/.dots"
 
+. "$HOME/.cargo/env"
