@@ -59,7 +59,7 @@ rustup component add rust-src
 # cargo-flamegraph  - generate flamegraphs and profiling data
 # cargo-outdated    - indicates when Rust dependencies are out of date
 # cargo-watch       - reload cargo commands on file save
-cargo install bat exa fd-find just qc ripgrep xsv cargo-check cargo-edit cargo-add cargo-flamegraph cargo-outdated cargo-watch diesel_cli
+cargo install bat exa fd-find just qc ripgrep xsv cargo-check cargo-edit cargo-add cargo-flamegraph cargo-outdated cargo-watch diesel_cli watchexec-cli
 
 # Install rust-analyzer for neovim rust LSP support
 # https://rust-analyzer.github.io/manual.html#rust-analyzer-language-server-binary
