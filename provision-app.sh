@@ -11,3 +11,6 @@ cd ~/.dots/app/rust-analyzer
 gzip rust-analyzer-x86_64-unknown-linux-gnu.gz -d
 mv rust-analyzer-x86_64-unknown-linux-gnu rust-analyzer
 chmod +x ~/.dots/app/rust-analyzer/rust-analyzer
+
+# Return to dots dir
+cd ~/.dots
