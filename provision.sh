@@ -5,11 +5,13 @@ sudo apt install zsh
 # Needs reboot to use zsh
 chsh -s $(which zsh)
 
+# Install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 sudo apt install cmake pkg-config libssl-dev libglib2.0-dev gcc-multilib libmysqlclient-dev -y
 
 # To get diesel_cli working for mysql
 sudo apt-get install libmysqlclient-dev libpq-dev libmariadbclient-dev-compat libsqlite3-dev -y
-
 
 # XCB Library for Interoperability with Xlib
 sudo apt install libxcb-shape0-dev libxcb-xfixes0-dev -y
