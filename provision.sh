@@ -2,7 +2,8 @@
 # set -euf -o pipefile
 
 sudo apt install zsh
-chsh -s /usr/bin/zsh
+# Needs reboot to use zsh
+chsh -s $(which zsh)
 
 sudo apt install cmake pkg-config libssl-dev libglib2.0-dev gcc-multilib libmysqlclient-dev -y
 
@@ -58,17 +59,17 @@ rustup component add rust-src
 # ripgrep           - a better grep
 # xsv               - fast csv cli toolkit
 # cargo-check       - checks for rust code errors
-# cargo-edit        - add, remove, upgrade dependencies from cli
+# cargo-edit        - add, remove, upgrade dependencies from cli (includes cargo-add)
+# cargo-add         - quickly add dependencies to Rust projects (INSTALLED WITH cargo-edit)
 # cargo-flamegraph  - generate flamegraphs and profiling data
 # cargo-outdated    - indicates when Rust dependencies are out of date
 # cargo-watch       - reload cargo commands on file save
 # watchexec-cli     - reload any commands on file save
-# cargo-add         - quickly add dependencies to Rust projects
 # diesel_cli        - database tool
 # Main cargo packages
-cargo install bat exa fd-find just qc quick-calc ripgrep cargo-check cargo-edit cargo-add cargo-outdated cargo-watch watchexec-cli
+cargo install bat exa fd-find just qc quick-calc ripgrep cargo-check cargo-edit cargo-outdated cargo-watch watchexec-cli
 # Extra cargo pacakges
-cargo install xsv cargo-flamegraph diesel_cli
+# cargo install xsv cargo-flamegraph diesel_cli
 
 # Install rust-analyzer for neovim rust LSP support
 # https://rust-analyzer.github.io/manual.html#rust-analyzer-language-server-binary
@@ -79,16 +80,19 @@ chmod +x ~/.local/bin/rust-analyzer
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-# DotBot Setup
-git submodule update --init --recursive .
-./dotbot/bin/dotbot -c install.conf.yaml
-
 # Set global git username + email
 git config --global user.name "Rachel Rybarczyk"
 git config --global user.email "rj@rybar.tech"
 
 # Force symlink bash scripts
-# ln -sf ~/.dots/etc/bashrc ~/.bashrc
-# ln -sf ~/.dots/etc/bash_profile ~/.bash_profile
-# ln -sf ~/.dots/etc/profile ~/.profile
+ ln -sf ~/.dots/etc/bashrc ~/.bashrc
+ ln -sf ~/.dots/etc/bash_profile ~/.bash_profile
+ ln -sf ~/.dots/etc/profile ~/.profile
+ ln -sf ~/.dots/etc/zshrc ~/.zshrc
+ ln -sf ~/.dots/etc/zshenv ~/.zshenv
+
+# DotBot Setup
+git submodule update --init --recursive .
+./dotbot/bin/dotbot -c install.conf.yaml
+
 source ~/.zshrc
