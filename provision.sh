@@ -83,6 +83,10 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 git submodule update --init --recursive .
 ./dotbot/bin/dotbot -c install.conf.yaml
 
+# Set global git username + email
+git config --global user.name "Rachel Rybarczyk"
+git config --global user.email "rj@rybar.tech"
+
 # Force symlink bash scripts
 # ln -sf ~/.dots/etc/bashrc ~/.bashrc
 # ln -sf ~/.dots/etc/bash_profile ~/.bash_profile
