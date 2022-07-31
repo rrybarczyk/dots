@@ -4,18 +4,18 @@
 sudo apt install zsh
 chsh -s /usr/bin/zsh
 
-sudo apt install cmake pkg-config libssl-dev libglib2.0-dev gcc-multilib libmysqlclient-dev
+sudo apt install cmake pkg-config libssl-dev libglib2.0-dev gcc-multilib libmysqlclient-dev -y
 
 # To get diesel_cli working for mysql
-sudo apt-get install libmysqlclient-dev libpq-dev libmariadbclient-dev-compat libsqlite3-dev
+sudo apt-get install libmysqlclient-dev libpq-dev libmariadbclient-dev-compat libsqlite3-dev -y
 
 
 # XCB Library for Interoperability with Xlib
-sudo apt install libxcb-shape0-dev libxcb-xfixes0-dev
+sudo apt install libxcb-shape0-dev libxcb-xfixes0-dev -y
 
 # Bitcoin build
-sudo apt install autoconf libboost-all-dev libevent-dev
-sudo apt-get install libdb++-dev
+sudo apt install autoconf libboost-all-dev libevent-dev -y
+sudo apt-get install libdb++-dev -y
 
 # Install python
 sudo apt install software-properties-common
@@ -25,7 +25,7 @@ sudo apt install python3-pip
 sudo apt-get install python3-venv 
 
 # Install neovim
-sudo apt install libtool automake libncurses5-dev g++
+sudo apt install libtool automake libncurses5-dev g++ -y
 sudo apt install neovim
 
 # nvim-lspconfig dependency
@@ -34,9 +34,9 @@ sudo npm i -g pyright
 # Niceities
 sudo apt install tldr wget -y
 
-sudo apt install fzf
+sudo apt install fzf -y
 # Better search to supplement fzf vim plugin
-sudo apt install silversearcher-ag
+sudo apt install silversearcher-ag -y
 
 # Install Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
