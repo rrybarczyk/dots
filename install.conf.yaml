@@ -8,9 +8,9 @@
         - ~/.cargo
         - ~/.config
         - ~/.ssh
+        - ~/app
 
 - shell:
-        - mkdir -p ~/app
         - mkdir -p ~/.cargo
         - mkdir -p ~/.config
         - mkdir -p ~/.config/nvim
@@ -19,7 +19,7 @@
         - mkdir -p ~/.vim/colors
 
 - link:
-        ~/app: app
+        ~/app:                                  app
         ~/.bash_profile:                        etc/bash_profile
         ~/.bashrc:                              etc/bashrc
         ~/.config/git/config:                   etc/gitconfig
