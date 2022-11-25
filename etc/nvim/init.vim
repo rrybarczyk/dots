@@ -171,6 +171,9 @@ set nobackup			            "Do not create backup files
 set spell spelllang=en_us           "Spell check
 set colorcolumn=100
 
+" ctrl-t finds all capital letters in a file
+nmap <c-t> /[A-Z]<return>
+
 "Intuitive vim split jump commands
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
