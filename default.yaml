@@ -7,21 +7,19 @@
         - '~'
         - ~/.cargo
         - ~/.config
-        - ~/.ssh
 
 - shell:
         - mkdir -p ~/.cargo
         - mkdir -p ~/.config
         - mkdir -p ~/.config/alacritty
         - mkdir -p ~/.gnupg
-        - mkdir -p ~/.ssh
         - mkdir -p ~/.vim/autoload
         - mkdir -p ~/.vim/colors
 
 - link:
         ~/.config/alacritty/alacritty.yml:      etc/alacritty.yml
         ~/.config/git/config:                   etc/gitconfig
-        ~/.ssh/config:                          etc/ssh-config
+        ~/.config/nvim/init.vim:                etc/nvim/init.vim
         ~/.tmux.conf:                           etc/tmux.conf
         ~/.vim/autoload/plug.vim:               submodules/vim-plug/plug.vim
         ~/.vim/colors/codedark.vim:             etc/vim-colors/codedark.vim
