@@ -5,7 +5,8 @@ set -euxo pipefail
 ## Install brew package manger
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 #
-brew install zsh tmux wget imagemagick htop tree lolcat lastpass-cli watchexec gnu-time gnupg2 git-lfs tmux-mem-cpu-load
+brew install zsh neovim tmux wget imagemagick htop tree lolcat lastpass-cli watchexec gnu-time gnupg2 git-lfs tmux-mem-cpu-load
+brew install poetry
 brew cask install mactex-no-gui
 brew cask install ngrok
 brew cask install wireshark
