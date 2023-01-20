@@ -43,7 +43,7 @@ Plug 'nvim-telescope/telescope.nvim'
 " Plug 'arcticicestudio/nord-vim'
 
 " Plug 'tomlion/vim-solidity'
-Plug 'TovarishFin/vim-solidity'
+" Plug 'TovarishFin/vim-solidity'
 " post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install && yarn add prettier-plugin-solidity',
@@ -85,23 +85,23 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'tpope/vim-markdown'
 
 " ARMv6/7 Assembly Syntax
-Plug 'ARM9/arm-syntax-vim'
-au BufNewFile,BufRead *.s,*.S set filetype=arm
+" Plug 'ARM9/arm-syntax-vim'
+" au BufNewFile,BufRead *.s,*.S set filetype=arm
 
 " OpenCL (Open Computing Language) Syntax
-Plug 'petRUShka/vim-opencl'
+" Plug 'petRUShka/vim-opencl'
 
 " Python Flake8 Linter
 Plug 'nvie/vim-flake8'
 
 " Matlab Syntax
-Plug 'lazywei/vim-matlab'
+" Plug 'lazywei/vim-matlab'
 
 " LaTeX Syntax
-Plug 'lervag/vimtex'
+" Plug 'lervag/vimtex'
 
 " Haskell Syntax
-Plug 'neovimhaskell/haskell-vim'
+" Plug 'neovimhaskell/haskell-vim'
 
 " Fuzzy searching using fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
