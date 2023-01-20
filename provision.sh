@@ -8,23 +8,25 @@ sudo apt -y full-upgrade
 # Install packages if they do not already exist, default "y"
 
 # General Enviornment Dev Tools
-sudo apt install -y build-essential llvm libssl-dev pkg-config cmake python python3 python-pip3 ruby-full
+sudo apt install -y build-essential llvm libssl-dev pkg-config cmake python3 python-pip3
 sudo apt install -y tmux git tree ngrep zlib1g bgpdump
+# sudo apt install -y build-essential llvm libssl-dev pkg-config cmake python python3 python-pip3 ruby-full
+# sudo apt install -y tmux git tree ngrep 
 
 # Niceities
-sudo apt install -y lolcat 
+# sudo apt install -y lolcat 
 
 # Alsa Dev Package
-sudo apt-get install libasound2-dev
+# sudo apt-get install libasound2-dev
 
 # XCB Library for Interoperability with Xlib
-sudo apt install libxcb-shape0-dev libxcb-xfixes0-dev
+# sudo apt install libxcb-shape0-dev libxcb-xfixes0-dev
 
 # Vulkan and PPA for Latest Drivers Install for AMD or Intel Graphics
-sudo add-apt-repository ppa:oibaf/graphics-drivers
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install libvulkan1 mesa-vulkan-drivers vulkan-utils
+# sudo add-apt-repository ppa:oibaf/graphics-drivers
+# sudo apt-get update
+# sudo apt-get upgrade
+# sudo apt-get install libvulkan1 mesa-vulkan-drivers vulkan-utils
 
 # Install Rust
 curl -sSf https://sh.rustup.rs | sh | sh -s -- -y
@@ -50,7 +52,8 @@ rustup component add clippy
 # cargo-flamegraph  - generate flamegraphs and profiling data
 # cargo-outdated    - indicates when Rust dependencies are out of date
 # cargo-watch       - reload cargo commands on file save
-cargo install bat exa fd-find just qc ripgrep xsv cargo-check cargo-edit cargo-flamegraph cargo-outdated cargo-watch
+cargo install bat exa fd-find just qc ripgrep cargo-check cargo-edit cargo-watch
+# cargo install bat exa fd-find just qc ripgrep xsv cargo-check cargo-edit cargo-flamegraph cargo-outdated cargo-watch
 
 # DotBot Setup
 git submodule update --init --recursive .
