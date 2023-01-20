@@ -8,24 +8,24 @@ chsh -s $(which zsh)
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-sudo apt install cmake pkg-config libssl-dev libglib2.0-dev gcc-multilib libmysqlclient-dev -y
+sudo apt install cmake pkg-config libssl-dev libglib2.0-dev gcc-multilib -y
 
 # To get diesel_cli working for mysql
-sudo apt-get install libmysqlclient-dev libpq-dev libmariadbclient-dev-compat libsqlite3-dev -y
+# sudo apt-get install libmysqlclient-dev libpq-dev libmariadbclient-dev-compat libsqlite3-dev libmysqlclient-dev -y
 
 # XCB Library for Interoperability with Xlib
-sudo apt install libxcb-shape0-dev libxcb-xfixes0-dev -y
+# sudo apt install libxcb-shape0-dev libxcb-xfixes0-dev -y
 
 # Bitcoin build
-sudo apt install autoconf libboost-all-dev libevent-dev -y
-sudo apt-get install libdb++-dev -y
+# sudo apt install autoconf libboost-all-dev libevent-dev -y
+# sudo apt-get install libdb++-dev -y
 
 # Install python
 sudo apt install software-properties-common
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
 sudo apt install python3-pip
-sudo apt-get install python3-venv 
+# sudo apt-get install python3-venv
 
 # Install neovim
 sudo apt install libtool automake libncurses5-dev g++ -y
@@ -84,7 +84,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 # Set global git username + email
 git config --global user.name "Rachel Rybarczyk"
-git config --global user.email "rj@rybar.tech"
+git config --global user.email "rachel.rybarczyk@galaxy.com"
 
 # Force symlink bash scripts
  ln -sf ~/.dots/etc/bashrc ~/.bashrc
