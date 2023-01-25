@@ -1,6 +1,9 @@
 #  Error if variable undefined, print each command
 # set -euf -o pipefile
 
+sudo apt update
+sudo apt upgrade
+
 sudo apt install zsh
 # Needs reboot to use zsh
 chsh -s $(which zsh)
@@ -9,6 +12,10 @@ chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 sudo apt install cmake pkg-config libssl-dev libglib2.0-dev gcc-multilib -y
+
+# Headless Chrome Dependencies
+sudo apt install -y libappindicator1 fonts-liberation
+sudo apt install -f
 
 # To get diesel_cli working for mysql
 # sudo apt-get install libmysqlclient-dev libpq-dev libmariadbclient-dev-compat libsqlite3-dev libmysqlclient-dev -y
@@ -23,8 +30,9 @@ sudo apt install cmake pkg-config libssl-dev libglib2.0-dev gcc-multilib -y
 # Install python
 sudo apt install software-properties-common
 sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt update
-sudo apt install python3-pip
+sudo apt update -y
+sudo apt install python3-pip -y
+sudo apt install flake8 -y
 # sudo apt-get install python3-venv
 
 # Install neovim
@@ -72,15 +80,6 @@ rustup component add rust-src
 cargo install bat exa fd-find just qc quick-calc ripgrep cargo-check cargo-edit cargo-outdated cargo-watch watchexec-cli
 # Extra cargo pacakges
 # cargo install xsv cargo-flamegraph diesel_cli
-
-# Install rust-analyzer for neovim rust LSP support
-# https://rust-analyzer.github.io/manual.html#rust-analyzer-language-server-binary
-curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.local/bin/rust-analyzer
-chmod +x ~/.local/bin/rust-analyzer
-
-# Install Plug for neovim
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # Set global git username + email
 git config --global user.name "Rachel Rybarczyk"
