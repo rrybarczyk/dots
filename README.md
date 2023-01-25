@@ -6,7 +6,8 @@ All of my system configuration files. Managed by [dotbot](https://github.com/ani
 $ git clone git@github.com:rrybarczyk/dots.git .dots
 $ cd .dots
 $ git checkout <desired system branch>
-$ . provision.sh
+$ . 0-provision-env.sh
+$ . 1-provision-app.sh
 $ just
 ```
 
