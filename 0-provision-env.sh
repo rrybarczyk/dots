@@ -35,6 +35,10 @@ sudo apt install python3-pip -y
 sudo apt install flake8 -y
 # sudo apt-get install python3-venv
 
+# Poetry env install: https://python-poetry.org/docs/#installing-with-the-official-installer
+curl -sSL https://install.python-poetry.org | python3 -
+
+
 # Install neovim
 sudo apt install libtool automake libncurses5-dev g++ -y
 sudo apt install neovim
