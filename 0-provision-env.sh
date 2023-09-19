@@ -13,9 +13,9 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 sudo apt install cmake pkg-config libssl-dev libglib2.0-dev gcc-multilib -y
 
-# Headless Chrome Dependencies
-sudo apt install -y libappindicator1 fonts-liberation
-sudo apt install -f
+# # Headless Chrome Dependencies
+# sudo apt install -y libappindicator1 fonts-liberation
+# sudo apt install -f
 
 # Bitcoin build
 # sudo apt install autoconf libboost-all-dev libevent-dev -y
@@ -33,9 +33,9 @@ pip install pyright  # nvim-lspconfig dependency
 # Poetry env install: https://python-poetry.org/docs/#installing-with-the-official-installer
 curl -sSL https://install.python-poetry.org | python3 -
 
-# Install neovim
+# Install neovim - neovim is installed in 1-provision-env.sh as `sudo apt install neovim` installs
+# old version
 sudo apt install libtool automake libncurses5-dev g++ -y
-sudo apt install neovim
 
 # Niceities
 sudo apt install tldr wget -y
