@@ -22,5 +22,16 @@ cd ~/.local/bin/go
 curl -OL https://golang.org/dl/go1.16.7.linux-amd64.tar.gz
 sudo tar -C /usr/local -xvf go1.16.7.linux-amd64.tar.gz
 
+# # Download Headless Chrome
+# # Must have ran following (executed in 1-provision.sh)
+# #   sudo apt install -y libappindicator1 fonts-liberation
+# #   sudo apt install -f
+# wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P ~/.local/bin/google-chrome-stable
+# sudo dpkg -i ~/.local/bin/google-chrome-stable/google-chrome*.deb
+
+# # Headless Chrome Run Instructions:
+# google-chrome-stable -version
+# google-chrome-stable --headless --disable-gpu --print-to-pdf https://gf.dev/
+
 # Return to dots dir
 cd ~/.dots
