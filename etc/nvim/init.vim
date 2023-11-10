@@ -170,6 +170,17 @@ set incsearch					    "Highlight search terms as you type
 set nobackup			            "Do not create backup files
 set spell spelllang=en_us           "Spell check
 set colorcolumn=100
+" Enable code folding
+" zc to close a fold at the cursor.
+" zo to open a fold at the cursor.
+" zM to close all folds.
+" zR to open all folds.
+" za to toggle a fold at the cursor.
+" zC to close all folds under the cursor recursively.
+" zO to open all folds under the cursor recursively.
+" set foldmethod=syntax " alternative to indent
+set foldmethod=indent   " alternative to syntax
+
 
 " ctrl-t finds all capital letters in a file
 nmap <c-t> /[A-Z]<return>
