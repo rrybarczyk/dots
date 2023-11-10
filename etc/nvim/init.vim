@@ -127,7 +127,7 @@ Plug 'itchyny/lightline.vim'
 
 Plug 'dhruvasagar/vim-zoom'
 
-Plug 'tikhomirov/vim-glsl'
+" Plug 'tikhomirov/vim-glsl'
 call plug#end()
 
 "------------------------------------------------------------------
