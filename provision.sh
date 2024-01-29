@@ -2,6 +2,10 @@
 # Exit script upon fail, error if variable undefined, print each command
 set -euxo pipefail
 
+# Set git credentials
+git config --global user.name "Rachel Rybarczyk"
+git config --global user.email "rachel.rybarczyk@gmail.com"
+
 ## Install brew package manger
 # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 export PATH=/opt/homebrew/bin:$PATH
