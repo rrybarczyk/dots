@@ -23,7 +23,7 @@
         ~/.config/git/config:                   etc/gitconfig
         ~/.config/nvim/init.vim:                etc/nvim/init.vim
         ~/.config/.secrets:                     etc/secrets
-        ~/.ssh/config:                          etc/ssh-config
+         # ~/.ssh/config:                          etc/ssh-config
         ~/.tmux.conf:                           etc/tmux.conf
         ~/.vim/autoload/plug.vim:               submodules/vim-plug/plug.vim
         ~/.vim/colors/codedark.vim:             etc/vim-colors/codedark.vim
