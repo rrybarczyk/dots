@@ -56,8 +56,6 @@ git config --global user.email "EMAIL"
  ln -sf ~/.dots/etc/bashrc ~/.bashrc
  ln -sf ~/.dots/etc/bash_profile ~/.bash_profile
  ln -sf ~/.dots/etc/profile ~/.profile
- ln -sf ~/.dots/etc/zshrc ~/.zshrc
- ln -sf ~/.dots/etc/zshenv ~/.zshenv
 
 # DotBot Setup
 git submodule update --init --recursive .
