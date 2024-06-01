@@ -1,7 +1,7 @@
 " https://otavio.dev/2018/09/30/migrating-from-vim-to-neovim
-" set runtimepath^=~/.vim runtimepath+=~/.vim/after
-" let &packpath = &runtimepath
-" source ~/.vimrc
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath = &runtimepath
+source ~/.vimrc
 
 set rtp+=~/.fzf
 "------------------------------------------------------------------
@@ -121,7 +121,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
 
 Plug 'itchyny/lightline.vim'
 
@@ -139,7 +139,7 @@ if (has("termguicolors"))
  set termguicolors
 endif
 set background=dark
-colorscheme gruvbox
+colorscheme codedark
 if has ("autocmd")
    filetype plugin indent on
 endif

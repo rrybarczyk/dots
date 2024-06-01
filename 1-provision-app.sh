@@ -16,11 +16,11 @@ gzip rust-analyzer-x86_64-unknown-linux-gnu.gz -d
 mv rust-analyzer-x86_64-unknown-linux-gnu rust-analyzer
 chmod +x ~/.local/bin/rust-analyzer/rust-analyzer
 
-# Install go
-mkdir -p ~/.local/bin/go
-cd ~/.local/bin/go
-curl -OL https://golang.org/dl/go1.16.7.linux-amd64.tar.gz
-sudo tar -C /usr/local -xvf go1.16.7.linux-amd64.tar.gz
+# # Install go
+# mkdir -p ~/.local/bin/go
+# cd ~/.local/bin/go
+# curl -OL https://golang.org/dl/go1.16.7.linux-amd64.tar.gz
+# sudo tar -C /usr/local -xvf go1.16.7.linux-amd64.tar.gz
 
 # # Download Headless Chrome
 # # Must have ran following (executed in 1-provision.sh)

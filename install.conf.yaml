@@ -26,5 +26,5 @@
         ~/.vim/colors/codedark.vim:             etc/vim-colors/codedark.vim
         ~/.vimrc:                               etc/vimrc
         ~/.config/nvim/init.vim:                etc/nvim/init.vim
-        ~/.zshenv:                              etc/zshenv
-        ~/.zshrc:                               etc/zshrc
+        ~/.bashrc:                              etc/bashrc
+        ~/.profile:                             etc/profile
