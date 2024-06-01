@@ -45,30 +45,8 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 #rustup component add rustfmt
 #rustup component add clippy
 #rustup component add rust-src
-#
-## bat               - a colorful cat
-## exa               - a colorful ls
-## fd-find           - a better find
-## just              - a better make <3
-## qc                - an advanced RPN cli calculator
-## quick-calc        - an advanced RPN cli calculator that has more features
-## ripgrep           - a better grep
-## xsv               - fast csv cli toolkit
-## cargo-check       - checks for rust code errors
-## cargo-edit        - add, remove, upgrade dependencies from cli (includes cargo-add)
-## cargo-add         - quickly add dependencies to Rust projects (INSTALLED WITH cargo-edit)
-## cargo-flamegraph  - generate flamegraphs and profiling data
-## cargo-outdated    - indicates when Rust dependencies are out of date
-## cargo-watch       - reload cargo commands on file save
-## watchexec-cli     - reload any commands on file save
-## diesel_cli        - database tool
-## Main cargo packages
-#cargo install bat exa fd-find just qc quick-calc ripgrep cargo-check cargo-edit cargo-outdated cargo-watch watchexec-cli
-## Extra cargo pacakges
-## cargo install xsv cargo-flamegraph diesel_cli
-## To get diesel_cli working for mysql
-## sudo apt-get install libmysqlclient-dev libpq-dev libmariadbclient-dev-compat libsqlite3-dev libmysqlclient-dev -y
-## cargo install diesel_cli
+
+cargo install ripgrep fd-find cargo-watch watchexec-cli
 
 # Set global git username + email
 git config --global user.name "Rachel Rybarczyk"
