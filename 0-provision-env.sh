@@ -28,7 +28,7 @@ sudo apt install cmake pkg-config libssl-dev libglib2.0-dev gcc-multilib -y
 
 # Install neovim - neovim is installed in 1-provision-env.sh as `sudo apt install neovim` installs
 # old version
-sudo apt install libtool automake libncurses5-dev g++ -y
+sudo apt install libtool automake libncurses5-dev g++ snmp -y
 
 # Niceities
 sudo apt install tldr wget -y
