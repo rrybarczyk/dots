@@ -31,8 +31,11 @@ git config --global user.email "rj@rybar.tech"
 ln -s $(which fdfind) ~/.local/bin/fd
 
 # Force symlink bash scripts
- ln -sf ~/.dots/etc/bashrc ~/.bashrc
- ln -sf ~/.dots/etc/bash_profile ~/.bash_profile
+ln -sf ~/.dots/etc/bashrc ~/.bashrc
+ln -sf ~/.dots/etc/bash_profile ~/.bash_profile
+
+git remote remove origin
+git remote add origin git@github.com:rrybarczyk/dots.git
 
 # DotBot Setup
 git submodule update --init --recursive .
