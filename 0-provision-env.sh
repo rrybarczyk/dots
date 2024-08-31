@@ -28,6 +28,8 @@ sudo apt install silversearcher-ag -y
 git config --global user.name "RJ Rybarczyk"
 git config --global user.email "rj@rybar.tech"
 
+ln -s $(which fdfind) ~/.local/bin/fd
+
 # Force symlink bash scripts
  ln -sf ~/.dots/etc/bashrc ~/.bashrc
  ln -sf ~/.dots/etc/bash_profile ~/.bash_profile
