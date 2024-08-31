@@ -179,7 +179,7 @@ set colorcolumn=100
 " zC to close all folds under the cursor recursively.
 " zO to open all folds under the cursor recursively.
 " set foldmethod=syntax " alternative to indent
-set foldmethod=indent   " alternative to syntax
+" set foldmethod=indent   " alternative to syntax
 
 
 " ctrl-t finds all capital letters in a file

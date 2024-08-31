@@ -125,11 +125,6 @@ set -o vi
 
 # Handy aliases
 alias ll="ls -la"
-alias lx="exa -laFG --color-scale --color=always --group-directories-first"
-alias bat='bat --theme=GitHub --color=always'
-alias cargogen="cargo generate --git https://github.com/rrybarczyk/template-rs.git"
+alias vim="nvim"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-alias pbcopy="xclip -sel clip"
-. "$HOME/.cargo/env"
