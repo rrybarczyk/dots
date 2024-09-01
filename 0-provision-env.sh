@@ -36,9 +36,3 @@ ln -sf ~/.dots/etc/bash_profile ~/.bash_profile
 
 git remote remove origin
 git remote add origin git@github.com:rrybarczyk/dots.git
-
-# DotBot Setup
-git submodule update --init --recursive .
-./dotbot/bin/dotbot -c install.conf.yaml
-
-source ~/.zshrc
