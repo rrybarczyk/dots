@@ -1,46 +1,61 @@
-#  Error if variable undefined, print each command
-# set -euf -o pipefile
+# For MacOSx
+# Exit script upon fail, error if variable undefined, print each command
+set -euxo pipefail
 
-sudo apt update -y
-sudo apt upgrade -y
+# # Set git credentials
+git config --global user.name "RJ Rybarczyk"
+git config --global user.email "rj@rybar.tech"
 
-sudo apt install libssl-dev libglib2.0-dev gcc-multilib -y
+## Install brew package manger + add to path
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# # For Intel Macs
+# export PATH=/opt/homebrew/bin:$PATH
+# For Apple Silicon Macs
+export PATH="/opt/homebrew/bin:$PATH"
 
-# Install neovim
-sudo apt install libtool automake libncurses5-dev g++ -y
+brew install neovim tmux wget htop tree lolcat watchexec tmux-mem-cpu-load fzf
+# brew install imagemagick gnu-time gnupg2 git-lfs
+brew install rust-analyzer
+# brew cask install mactex-no-gui
+# brew cask install ngrok
+# brew cask install wireshark
 
-# Bitcoin build
-sudo apt-get install build-essential cmake pkg-config python3 -y
-sudo apt-get install libevent-dev libboost-dev -y
-sudo apt install libsqlite3-dev -y
-sudo apt install libminiupnpc-dev libnatpmp-dev -y
-sudo apt-get install libzmq3-dev -y
-sudo apt install systemtap-sdt-dev -y
+## Install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-# Niceities
-sudo apt install ripgrep fd-find tldr just wget -y
-sudo apt install fzf -y
-# Better search to supplement fzf vim plugin
-sudo apt install silversearcher-ag -y
+## Install Plug for neovim
+curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 
 # Install Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 . "$HOME/.cargo/env"
 
+rustup install nightly
 rustup component add rustfmt
 rustup component add clippy
-rustup component add rust-src # Used by rust-analyzer
-rustup update
-
-# Set global git username + email
-git config --global user.name "RJ Rybarczyk"
-git config --global user.email "rj@rybar.tech"
-
-ln -s $(which fdfind) ~/.local/bin/fd
+#
+# bat               - a colorful cat
+# exa               - a colorful ls
+# fd-find           - a better find
+# hexyl             - hex dump
+# just              - a better make <3
+# qc                - an advanced RPN cli calculator
+# ripgrep           - a better grep
+# xsv               - fast csv cli toolkit
+# cargo-check       - checks for rust code errors
+# cargo-edit        - add, remove, upgrade dependencies from cli
+# flamegraph  - generate flamegraphs and profiling data
+# cargo-outdated    - indicates when Rust dependencies are out of date
+# cargo-watch       - reload cargo commands on file save
+cargo install just fd-find ripgrep qc
+# cargo install bat exa hexyl
+# cargo install cargo-check cargo-edit cargo-outdated cargo-watch
 
 # Force symlink bash scripts
-ln -sf ~/.dots/etc/bashrc ~/.bashrc
-ln -sf ~/.dots/etc/bash_profile ~/.bash_profile
+ln -sf ~/.dots/etc/zshrc ~/.zshrc
+ln -sf ~/.dots/etc/zshenv ~/.zshenv
 
 git remote remove origin
 git remote add origin git@github.com:rrybarczyk/dots.git
