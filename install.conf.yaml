@@ -11,17 +11,19 @@
 
 - shell:
         - mkdir -p ~/.config
+        - mkdir -p ~/.config/alacritty
+        - mkdir -p ~/.config/nvim
         - mkdir -p ~/.config/nvim/colors
         - mkdir -p ~/.ssh
-        - mkdir -p ~/.vim/autoload
 
 - link:
-        ~/.local/bin/nvim:                      local/nvim/nvim-linux64/bin/nvim
-        ~/.bash_profile:                        etc/bash_profile
-        ~/.bashrc:                              etc/bashrc
+        ~/.config/alacritty/alacritty.toml:     etc/alacritty.toml
         ~/.config/git/config:                   etc/gitconfig
-        ~/.tmux.conf:                           etc/tmux.conf
-        ~/.vim/autoload/plug.vim:               submodules/vim-plug/plug.vim
-        ~/.vimrc:                               etc/vimrc
         ~/.config/nvim/init.vim:                etc/nvim/init.vim
         ~/.config/nvim/colors/codedark.vim:     etc/nvim/colors/codedark.vim
+        # ~/.config/.secrets:                     etc/secrets
+        # ~/.ssh/config:                          etc/ssh-config
+        ~/.tmux.conf:                           etc/tmux.conf
+        ~/.zshenv:                              etc/zshenv
+        ~/.zshrc:                               etc/zshrc
+        ~/.oh-my-zsh/oh-my-zsh.sh:              etc/oh-my-zsh.sh
