@@ -1,10 +1,11 @@
 " Specify a directory for plugins
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 " LSP configuration
 Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-compe'
 
-" Autocompletion plugin (optional, but recommended)
+" " Autocompletion plugin (optional, but recommended)
 Plug 'hrsh7th/nvim-cmp'          " Completion engine
 Plug 'hrsh7th/cmp-nvim-lsp'      " LSP source for nvim-cmp
 Plug 'hrsh7th/cmp-buffer'        " Buffer completions
@@ -13,7 +14,7 @@ Plug 'hrsh7th/cmp-cmdline'       " Command-line completions
 Plug 'hrsh7th/cmp-vsnip'         " Snippet completions
 Plug 'hrsh7th/vim-vsnip'         " Snippet engine
 
-" Optional: Status line plugin
+" " Optional: Status line plugin
 Plug 'nvim-lualine/lualine.nvim'
 
 Plug 'christoomey/vim-tmux-navigator'                   " Tmux integration
@@ -116,7 +117,6 @@ require'lspconfig'.rust_analyzer.setup{
     }
 }
 EOF
-
 
 " Optional: Setup nvim-cmp for autocompletion
 lua << EOF
