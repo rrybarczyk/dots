@@ -10,5 +10,11 @@ tar xzvf nvim-linux64.tar.gz
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
+
+# rust-analyzer LSP for nvim
+curl -LO https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-linux
+chmod +x rust-analyzer-linux
+sudo mv rust-analyzer-linux /usr/local/bin/rust-analyzer
+
 # Return to dots dir
 cd ~/.dots
