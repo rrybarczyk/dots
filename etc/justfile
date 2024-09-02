@@ -15,3 +15,6 @@ yt-to-wav YT_LINK:
 # Source: https://github.com/lbgists/audio-spectrum-matplotlib/blob/master/merge.sh
 mpx-to-wav MPX:
   ffmpeg -i temp.mp4 -i temp.wav -vcodec copy -acodec libmp3lame {{MPX}}
+
+rg-ext STRING FILE_EXT
+  rg "{{STRING}}" -g '*.{{FILE_EXT}}'
