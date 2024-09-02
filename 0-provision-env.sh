@@ -23,6 +23,14 @@ sudo apt install fzf -y
 # Better search to supplement fzf vim plugin
 sudo apt install silversearcher-ag -y
 
+# Install Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+. "$HOME/.cargo/env"
+
+rustup component add rustfmt
+rustup component add clippy
+rustup component add rust-src # Used by rust-analyzer
+rustup update
 
 # Set global git username + email
 git config --global user.name "RJ Rybarczyk"
