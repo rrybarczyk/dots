@@ -18,7 +18,7 @@ sudo apt-get install libzmq3-dev -y
 sudo apt install systemtap-sdt-dev -y
 
 # Niceities
-sudo apt install ripgrep fd-find fswatch tldr just wget -y
+sudo apt install ripgrep fd-find tldr just wget -y
 sudo apt install fzf -y
 # Better search to supplement fzf vim plugin
 sudo apt install silversearcher-ag -y
