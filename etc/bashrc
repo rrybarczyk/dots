@@ -127,5 +127,7 @@ set -o vi
 alias ll="ls -la"
 alias vim="nvim"
 
+export PATH=/usr/local/bin:$PATH
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 . "$HOME/.cargo/env"

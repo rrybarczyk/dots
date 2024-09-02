@@ -12,9 +12,10 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 
 # rust-analyzer LSP for nvim
-curl -LO https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-linux
-chmod +x rust-analyzer-linux
-sudo mv rust-analyzer-linux /usr/local/bin/rust-analyzer
+curl -LO https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz
+gunzip rust-analyzer-x86_64-unknown-linux-gnu.gz
+chmod +x rust-analyzer-x86_64-unknown-linux-gnu
+sudo mv rust-analyzer-x86_64-unknown-linux-gnu /usr/local/bin/rust-analyzer
 
 # Return to dots dir
 cd ~/.dots
