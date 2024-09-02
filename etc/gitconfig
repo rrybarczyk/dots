@@ -35,3 +35,7 @@
   
 [pull]
   rebase = true
+
+# Alias for ignoring pre-push git hooks: `git push --no-verify <remote> <branch>`
+[alias]
+  push-nv = "!git push --no-verify"
