@@ -44,3 +44,9 @@ name = RJ Rybarczyk
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+[init]
+	defaultBranch = main
+
+# Alias for ignoring pre-push git hooks: `git push --no-verify <remote> <branch>`
+[alias]
+  push-nv = "!git push --no-verify"
