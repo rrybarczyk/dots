@@ -12,7 +12,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Collection of common configurations for the Nvim LSP client
 Plug 'neovim/nvim-lspconfig'
-" Completion framework
+" " Completion framework
 Plug 'hrsh7th/nvim-cmp'
 
 " LSP completion source for nvim-cmp
@@ -25,32 +25,20 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-buffer'
 
-" See hrsh7th's other plugins for more completion sources!
-
-" To enable more of the features of rust-analyzer, such as inlay hints and more!
 Plug 'simrat39/rust-tools.nvim'
+" Plug 'mrcjkb/rustaceanvim'
 
-" Snippet engine
-Plug 'hrsh7th/vim-vsnip'
+" " Snippet engine
+" Plug 'hrsh7th/vim-vsnip'
 
-" Fuzzy finder
-" Optional
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
+" " Fuzzy finder
+" " Optional
+" Plug 'nvim-lua/popup.nvim'
+" Plug 'nvim-lua/plenary.nvim'
+" Plug 'nvim-telescope/telescope.nvim'
 
 " Color scheme used in the GIFs!
 " Plug 'arcticicestudio/nord-vim'
-
-" Plug 'tomlion/vim-solidity'
-" Plug 'TovarishFin/vim-solidity'
-" post install (yarn install | npm install) then load plugin only for editing supported files
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install && yarn add prettier-plugin-solidity',
-  \ 'for': ['solidity'] }
-
-" Extensions to built-in LSP, for example, providing type inlay hints
-Plug 'nvim-lua/lsp_extensions.nvim'
 
 " " Autocompletion framework for built-in LSP
 " Plug 'nvim-lua/completion-nvim'
@@ -68,9 +56,7 @@ Plug 'preservim/nerdcommenter'
 " Adds syntax for nerdtree on most common file extensions
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
-Plug 'Xuyuanp/nerdtree-git-plugin'
-
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 
 " Rust Synatx
 Plug 'rust-lang/rust.vim'
@@ -84,50 +70,16 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 " Markdown Syntax
 Plug 'tpope/vim-markdown'
 
-" ARMv6/7 Assembly Syntax
-" Plug 'ARM9/arm-syntax-vim'
-" au BufNewFile,BufRead *.s,*.S set filetype=arm
-
-" OpenCL (Open Computing Language) Syntax
-" Plug 'petRUShka/vim-opencl'
-
-" Python Flake8 Linter
-Plug 'nvie/vim-flake8'
-
-" Matlab Syntax
-" Plug 'lazywei/vim-matlab'
-
-" LaTeX Syntax
-" Plug 'lervag/vimtex'
-
-" Haskell Syntax
-" Plug 'neovimhaskell/haskell-vim'
-
 " Fuzzy searching using fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-" A very fast, multi-syntax context-sensitive color name highlighter
-Plug 'ap/vim-css-color'
-
-" Highlight sass colors and color variables
-Plug 'cakebaker/scss-syntax.vim'
-
-Plug 'alvan/vim-closetag'
-
-" C++ syntax highlighting
-Plug 'octol/vim-cpp-enhanced-highlight'
-
-Plug 'junegunn/limelight.vim'
-Plug 'junegunn/goyo.vim'
-
+" Retro groove color scheme for vim
 Plug 'morhetz/gruvbox'
 
+" Statusline/tabline plugin
 Plug 'itchyny/lightline.vim'
 
-Plug 'dhruvasagar/vim-zoom'
-
-" Plug 'tikhomirov/vim-glsl'
 call plug#end()
 
 "------------------------------------------------------------------
