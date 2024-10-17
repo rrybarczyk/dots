@@ -238,6 +238,14 @@ let NERDTreeChDirMode = 2
 let NERDTreeNaturalSort = 1
 let g:NERDTreeWinSize = 35 
 
+" Set text width to 100 characters and format options for Markdown files
+augroup MarkdownSettings
+  autocmd!
+  autocmd FileType markdown setlocal textwidth=100
+  autocmd FileType markdown setlocal formatoptions+=t
+augroup END
+
+
 " -------------------------------------------------------------------------------------------------
 "put cursor on file upon startup
 autocmd VimEnter * wincmd p
