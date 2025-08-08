@@ -3,7 +3,13 @@ export PATH="/opt/homebrew/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/Development/StratumV2/sv2-tp-0.1.9-bitcoin/build/src:$PATH"
+export PATH="$HOME/Development/StratumV2/sv2-tp-0.1.9-bitcoin/contrib/signet:$PATH"
+export LLVM_CONFIG=/opt/homebrew/opt/llvm/bin/llvm-config
+
 
 export DOTS="$HOME/.dots"
 
 # source ~/.config/.secrets
+. "$HOME/.cargo/env"
+# export PATH=$PATH:$(go env GOPATH)/bin
