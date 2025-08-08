@@ -27,6 +27,7 @@ yellow = "0xe6c547"
 [colors.primary]
 background = "0x000000"
 foreground = "0xeaeaea"
+background_opacity = 1.0
 
 [cursor]
 style = "Block"
