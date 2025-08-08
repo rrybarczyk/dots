@@ -22,9 +22,14 @@ Plug 'preservim/nerdtree',     {'on': 'NERDTreeToggle'} " File drawer
 Plug 'preservim/nerdcommenter'                          " Easy commenting
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'          " Nerdtree file ext highlights
 Plug 'preservim/nerdtree'                               " File explorer
+Plug 'tikhomirov/vim-glsl'
 
 Plug 'junegunn/fzf'         " Fuzzy find
 Plug 'junegunn/fzf.vim'     " Fuzzy find
+
+Plug 'fatih/vim-go'         " Go development plugin for Vim
+
+Plug 'github/copilot.vim'   " GitHub Copilot
 
 " Initialize plugin system
 call plug#end()
@@ -87,6 +92,17 @@ nnoremap <C-h> <C-w><C-h>
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 
+" --- Copilot sane defaults ---
+let g:copilot_no_tab_map = v:true
+imap <silent><script><expr> <Tab> copilot#Accept("\<Tab>")
+" imap <silent><script><expr> <C-j> copilot#Accept("\<CR>")
+
+" " Optional: cycle/clear (handy but safe)
+" imap <silent> <C-]> <Plug>(copilot-next)
+" imap <silent> <C-[> <Plug>(copilot-previous)
+" imap <silent> <C-\> <Plug>(copilot-dismiss)
+
+
 " Enable LSP support for Rust
 lua << EOF
 require'lspconfig'.rust_analyzer.setup{
@@ -128,8 +144,8 @@ cmp.setup({
         end,
     },
     mapping = {
-        ['<Tab>'] = cmp.mapping.select_next_item(),
-        ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+        ['<S-Tab>'] = cmp.mapping.select_next_item(),
+        -- ['<S-Tab>'] = cmp.mapping.select_prev_item(),
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
@@ -176,6 +192,11 @@ let g:fzf_action = {
 
 " ----------------------------------------------- RUST --------------------------------------------
 let g:rustfmt_autosave=1            "Auto format with rustfmt on save
+
+" ----------------------------------------------- PYTHON ------------------------------------------
+" Map F8 to run flake8 on the current file
+nnoremap <F8> :w<CR>:!flake8 %<CR>
+
 
 " ----------------------------------------------- SEARCH ------------------------------------------
 nnoremap <c-p> :GFiles<cr>
