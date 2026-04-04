@@ -29,7 +29,7 @@ Plug 'junegunn/fzf.vim'     " Fuzzy find
 
 Plug 'fatih/vim-go'         " Go development plugin for Vim
 
-Plug 'github/copilot.vim'   " GitHub Copilot
+" Plug 'github/copilot.vim'   " GitHub Copilot
 
 " Initialize plugin system
 call plug#end()
@@ -92,9 +92,9 @@ nnoremap <C-h> <C-w><C-h>
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 
-" --- Copilot sane defaults ---
-let g:copilot_no_tab_map = v:true
-imap <silent><script><expr> <Tab> copilot#Accept("\<Tab>")
+" " --- Copilot sane defaults ---
+" let g:copilot_no_tab_map = v:true
+" imap <silent><script><expr> <Tab> copilot#Accept("\<Tab>")
 " imap <silent><script><expr> <C-j> copilot#Accept("\<CR>")
 
 " " Optional: cycle/clear (handy but safe)
