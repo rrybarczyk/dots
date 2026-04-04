@@ -1,6 +1,8 @@
 " Specify a directory for plugins
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+
 " LSP configuration
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
@@ -43,7 +45,8 @@ set pastetoggle=<F9>        " map `:set paste` to F9 (can use in insert mode!)
 if (has("termguicolors"))
  set termguicolors
 endif
-colorscheme codedark
+lua require("catppuccin").setup({ flavour = "mocha" })
+colorscheme catppuccin
 
 set hidden
 set backspace=indent,eol,start
@@ -165,7 +168,7 @@ EOF
 lua << EOF
 require'lualine'.setup {
   options = {
-    theme = 'auto',
+    theme = 'catppuccin',
     section_separators = '',
     component_separators = ''
   }

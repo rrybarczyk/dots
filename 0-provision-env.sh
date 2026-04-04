@@ -13,12 +13,22 @@ git config --global user.email "rj@rybar.tech"
 # For Apple Silicon Macs
 export PATH="/opt/homebrew/bin:$PATH"
 
-brew install neovim tmux wget htop tree lolcat watchexec tmux-mem-cpu-load fzf
+brew install neovim tmux wget htop tree lolcat watchexec tmux-mem-cpu-load fzf ripgrep
 # brew install imagemagick gnu-time gnupg2 git-lfs
 brew install rust-analyzer
-# brew cask install mactex-no-gui
-# brew cask install ngrok
-# brew cask install wireshark
+
+# AeroSpace window manager
+brew tap nikitabobko/tap
+brew install --cask nikitabobko/tap/aerospace
+
+# Alacritty terminal + JetBrains Mono font
+brew install --cask alacritty font-jetbrains-mono
+
+# Node.js (for Claude Code CLI)
+brew install node
+
+# Claude Code CLI
+npm install -g @anthropic-ai/claude-code
 
 ## Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"

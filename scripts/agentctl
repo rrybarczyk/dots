@@ -1,0 +1,122 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SESSION="${AGENTS_SESSION:-agents}"
+
+# Auto-detect session: if agent name contains ":", treat left side as session
+# e.g. agentctl read data:duncan → session=data, agent=duncan
+_parse_target() {
+  local target="$1"
+  if [[ "$target" == *":"* ]]; then
+    SESSION="${target%%:*}"
+    echo "${target##*:}"
+  else
+    echo "$target"
+  fi
+}
+
+usage() {
+  cat <<EOF
+Usage: agentctl <command> [args]
+
+Tip: Use session:agent syntax to target other sessions.
+  e.g. agentctl read data:duncan
+  e.g. agentctl send builds:cc02-tom "do the thing"
+  Without prefix, uses \$AGENTS_SESSION (default: agents)
+
+Commands:
+  list                  List all agent windows and their status
+  read <agent>          Capture the current screen of an agent
+  send <agent> <text>   Send text input to an agent (presses Enter)
+  type <agent> <text>   Send text without pressing Enter
+  new  [name] [dir]     Create a new agent window
+  kill <agent>          Close an agent window
+  log  <agent> [lines]  Capture scrollback history (default: 200 lines)
+
+Arguments:
+  <agent>   Window name (e.g., agent1) or index number
+
+Environment:
+  AGENTS_SESSION   tmux session name (default: agents)
+
+Examples:
+  agentctl list
+  agentctl read agent1
+  agentctl send agent2 "fix the login bug in auth.py"
+  agentctl new agent3 ~/other-project
+  agentctl log agent1 500
+EOF
+  exit 0
+}
+
+require_session() {
+  if ! tmux has-session -t "$SESSION" 2>/dev/null; then
+    echo "Error: session '$SESSION' not found. Run 'agents' first." >&2
+    exit 1
+  fi
+}
+
+cmd_list() {
+  require_session
+  echo "Session: $SESSION"
+  echo "---"
+  tmux list-windows -t "$SESSION" -F "#{window_index}: #{window_name}  [#{pane_current_command}]  #{pane_current_path}"
+}
+
+cmd_read() {
+  local target="${1:?Usage: agentctl read <agent>}"
+  require_session
+  tmux capture-pane -t "$SESSION:${target}" -p -S -50
+}
+
+cmd_send() {
+  local target="${1:?Usage: agentctl send <agent> <text>}"
+  shift
+  local text="$*"
+  require_session
+  tmux send-keys -t "$SESSION:${target}" "$text" Enter
+}
+
+cmd_type() {
+  local target="${1:?Usage: agentctl type <agent> <text>}"
+  shift
+  local text="$*"
+  require_session
+  tmux send-keys -t "$SESSION:${target}" "$text"
+}
+
+cmd_new() {
+  local name="${1:-agent$(( $(tmux list-windows -t "$SESSION" | wc -l) ))}"
+  local dir="${2:-$(pwd)}"
+  require_session
+  tmux new-window -t "$SESSION" -n "$name" -c "$dir"
+  tmux send-keys -t "$SESSION:${name}" "claude" Enter
+  echo "Created $name in $dir"
+}
+
+cmd_kill() {
+  local target="${1:?Usage: agentctl kill <agent>}"
+  require_session
+  tmux kill-window -t "$SESSION:${target}"
+  echo "Killed $target"
+}
+
+cmd_log() {
+  local target="${1:?Usage: agentctl log <agent> [lines]}"
+  local lines="${2:-200}"
+  require_session
+  tmux capture-pane -t "$SESSION:${target}" -p -S "-${lines}"
+}
+
+case "${1:-}" in
+  list)  shift; cmd_list "$@" ;;
+  read)  shift; cmd_read "$@" ;;
+  send)  shift; cmd_send "$@" ;;
+  type)  shift; cmd_type "$@" ;;
+  new)   shift; cmd_new "$@" ;;
+  kill)  shift; cmd_kill "$@" ;;
+  log)   shift; cmd_log "$@" ;;
+  -h|--help|help) usage ;;
+  "") usage ;;
+  *)  echo "Unknown command: $1" >&2; usage ;;
+esac

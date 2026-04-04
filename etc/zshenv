@@ -9,6 +9,7 @@ export LLVM_CONFIG=/opt/homebrew/opt/llvm/bin/llvm-config
 
 
 export DOTS="$HOME/.dots"
+export PATH="$HOME/.dots/scripts:$PATH"
 
 # source ~/.config/.secrets
 . "$HOME/.cargo/env"

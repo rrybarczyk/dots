@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SESSION="agents"
+DEFAULT_COUNT=2
+
+usage() {
+  cat <<EOF
+Usage: agents [options] [project_dir]
+
+Spin up a tmux session with an orchestrator + worker Claude Code agents.
+
+Options:
+  -n NUM    Number of worker agents (default: $DEFAULT_COUNT)
+  -s NAME   Session name (default: $SESSION)
+  -h        Show this help
+
+Examples:
+  agents                     # 2 workers in current dir
+  agents -n 4 ~/myproject    # 4 workers in ~/myproject
+  agents -s myteam -n 3      # custom session name
+EOF
+  exit 0
+}
+
+while getopts "n:s:h" opt; do
+  case $opt in
+    n) DEFAULT_COUNT="$OPTARG" ;;
+    s) SESSION="$OPTARG" ;;
+    h) usage ;;
+    *) usage ;;
+  esac
+done
+shift $((OPTIND - 1))
+
+PROJECT_DIR="${1:-$(pwd)}"
+PROJECT_DIR="$(cd "$PROJECT_DIR" && pwd)"
+
+if tmux has-session -t "$SESSION" 2>/dev/null; then
+  echo "Session '$SESSION' already exists. Attaching..."
+  exec tmux attach -t "$SESSION"
+fi
+
+# Create session with orchestrator window
+tmux new-session -d -s "$SESSION" -n orchestrator -c "$PROJECT_DIR"
+
+# Create worker windows
+for i in $(seq 1 "$DEFAULT_COUNT"); do
+  tmux new-window -t "$SESSION" -n "agent${i}" -c "$PROJECT_DIR"
+done
+
+# Start Claude Code in each worker
+for i in $(seq 1 "$DEFAULT_COUNT"); do
+  tmux send-keys -t "$SESSION:agent${i}" "claude" Enter
+done
+
+# Go back to orchestrator window and start claude
+tmux select-window -t "$SESSION:orchestrator"
+tmux send-keys -t "$SESSION:orchestrator" "claude" Enter
+
+# Attach
+exec tmux attach -t "$SESSION"

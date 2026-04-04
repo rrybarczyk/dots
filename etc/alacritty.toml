@@ -1,33 +1,37 @@
 live_config_reload = true
 working_directory = "None"
 
+# Catppuccin Mocha
 [colors]
 draw_bold_text_with_bright_colors = true
 
-[colors.bright]
-black = "0x666666"
-blue = "0x7aa6da"
-cyan = "0x54ced6"
-green = "0x9ec400"
-magenta = "0xb77ee0"
-red = "0xff3334"
-white = "0xffffff"
-yellow = "0xe7c547"
+[colors.primary]
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+
+[colors.cursor]
+text = "#1e1e2e"
+cursor = "#f5e0dc"
 
 [colors.normal]
-black = "0x000000"
-blue = "0x7aa6da"
-cyan = "0x70c0ba"
-green = "0xb9ca4a"
-magenta = "0xc397d8"
-red = "0xd54e53"
-white = "0xeaeaea"
-yellow = "0xe6c547"
+black   = "#45475a"
+red     = "#f38ba8"
+green   = "#a6e3a1"
+yellow  = "#f9e2af"
+blue    = "#89b4fa"
+magenta = "#f5c2e7"
+cyan    = "#94e2d5"
+white   = "#bac2de"
 
-[colors.primary]
-background = "0x000000"
-foreground = "0xeaeaea"
-background_opacity = 1.0
+[colors.bright]
+black   = "#585b70"
+red     = "#f38ba8"
+green   = "#a6e3a1"
+yellow  = "#f9e2af"
+blue    = "#89b4fa"
+magenta = "#f5c2e7"
+cyan    = "#94e2d5"
+white   = "#a6adc8"
 
 [cursor]
 style = "Block"
