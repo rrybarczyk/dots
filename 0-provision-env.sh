@@ -21,8 +21,8 @@ brew install rust-analyzer
 brew tap nikitabobko/tap
 brew install --cask nikitabobko/tap/aerospace
 
-# Alacritty terminal + JetBrains Mono font
-brew install --cask alacritty font-jetbrains-mono
+# Ghostty terminal + JetBrains Mono font
+brew install --cask ghostty font-jetbrains-mono
 
 # Node.js (for Claude Code CLI)
 brew install node

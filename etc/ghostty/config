@@ -1,0 +1,19 @@
+# Catppuccin Mocha
+theme = catppuccin-mocha
+
+# Font
+font-family = JetBrains Mono
+font-size = 11
+
+# Scrollback
+scrollback-limit = 100000
+
+# Window
+window-decoration = true
+
+# Cursor
+cursor-style = block
+cursor-style-blink = false
+
+# Shell integration
+shell-integration = zsh

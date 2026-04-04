@@ -12,7 +12,7 @@
 
 - shell:
         - mkdir -p ~/.config
-        - mkdir -p ~/.config/alacritty
+        - mkdir -p ~/.config/ghostty
         - mkdir -p ~/.config/nvim
         - mkdir -p ~/.config/nvim/colors
         - mkdir -p ~/.config/aerospace
@@ -21,7 +21,7 @@
         - chmod +x ~/.dots/etc/aerospace/scripts/focus-or-slide.sh ~/.dots/etc/aerospace/scripts/cycle-width.sh
 
 - link:
-        ~/.config/alacritty/alacritty.toml:     etc/alacritty.toml
+        ~/.config/ghostty/config:               etc/ghostty/config
         ~/.config/git/config:                   etc/gitconfig
         ~/.config/nvim/init.vim:                etc/nvim/init.vim
         ~/.config/aerospace:                    etc/aerospace
